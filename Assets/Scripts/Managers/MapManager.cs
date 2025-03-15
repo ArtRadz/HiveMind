@@ -10,7 +10,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private int gridHeight = 10;
 
     [Header("Tile Template")] [SerializeField]
-    private TileData tileTemplate;
+    private TileBlueprint tileTemplate;
 
     [Header("Tile Prefab")] [SerializeField]
     private GameObject metaTilePrefab;
@@ -66,17 +66,17 @@ public class MapManager : MonoBehaviour
             bool hasChanged = metaTile.CheckSelfForUpdate();
             if (hasChanged)
             {
-                TileData _currentTileData = Instantiate(tileTemplate);
+                TileBlueprint _currentTileData = Instantiate(tileTemplate);
                 TileBase tileToSet = _currentTileData.defaultTile;
-                if (metaTile.tileInfo.hasQueen)
+                if (metaTile.tileData.hasQueen)
                 {
                     tileToSet = _currentTileData.queenTile;
                 }
-                else if (metaTile.tileInfo.hasResource)
+                else if (metaTile.tileData.hasResource)
                 {
                     tileToSet = _currentTileData.resourceTile;
                 }
-                Vector3Int cellPos = new Vector3Int(metaTile.tileInfo.tilePosition[0], metaTile.tileInfo.tilePosition[1], 0);
+                Vector3Int cellPos = new Vector3Int(metaTile.tileData.tilePosition[0], metaTile.tileData.tilePosition[1], 0);
                 
                 tilemap.SetTile(cellPos, tileToSet);
             }
@@ -84,14 +84,14 @@ public class MapManager : MonoBehaviour
     }
     private void CreateMetaTileGrid()
     {
-        Dictionary<Vector2Int, TileData> _tileDatas = new Dictionary<Vector2Int, TileData>();
+        Dictionary<Vector2Int, TileBlueprint> _tileDatas = new Dictionary<Vector2Int, TileBlueprint>();
         Dictionary<Vector2Int, GameObject> _metaTiles = new Dictionary<Vector2Int, GameObject>();
         for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < gridHeight; y++)
             {
                 Vector2Int currentKey = new Vector2Int(x, y);
-                TileData _currentTileData;
+                TileBlueprint _currentTileData;
                 _currentTileData = Instantiate(tileTemplate);
                 _currentTileData.tilePosition[0] = x;
                 _currentTileData.tilePosition[1] = y;
@@ -107,7 +107,7 @@ public class MapManager : MonoBehaviour
         PositionMetaTilesOnTilemap(_metaTiles);
     }
 
-    private void SetTileDataNeighbors(Dictionary<Vector2Int, TileData> _tileDatas,
+    private void SetTileDataNeighbors(Dictionary<Vector2Int, TileBlueprint> _tileDatas,
         Dictionary<Vector2Int, GameObject> _metaTiles)
     {
         foreach (var _tileData in _tileDatas)
@@ -165,7 +165,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    private void PopulateTileMap( Dictionary<Vector2Int,TileData> _tileDatas)
+    private void PopulateTileMap( Dictionary<Vector2Int,TileBlueprint> _tileDatas)
     {
         for (int x = 0; x < gridWidth; x++)
         {
@@ -182,7 +182,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    private void SetMetaTileData( Dictionary<Vector2Int,TileData> _tileDatas, Dictionary<Vector2Int,GameObject> _metaTiles)
+    private void SetMetaTileData( Dictionary<Vector2Int,TileBlueprint> _tileDatas, Dictionary<Vector2Int,GameObject> _metaTiles)
     {
         foreach (var metaTile in _metaTiles)
         {
@@ -197,7 +197,7 @@ public class MapManager : MonoBehaviour
     {
         foreach (var metaTile in _metaTiles)
         {
-            var tileInfo = metaTile.Value.GetComponent<MetaTile>().tileInfo;
+            var tileInfo = metaTile.Value.GetComponent<MetaTile>().tileData;
             int x = tileInfo.tilePosition[0];
             int y = tileInfo.tilePosition[1];
             Vector3 worldPos = tilemap.CellToWorld(new Vector3Int(x, y, 0));

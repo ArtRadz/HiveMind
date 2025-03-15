@@ -654,11 +654,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 776c6b93-c5fb-49b3-ab36-c53b8577870b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: HiveMind
+  organizationId: artradz
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

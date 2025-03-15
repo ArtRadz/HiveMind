@@ -5,7 +5,7 @@ using UnityEngine;
 public class MetaTile : MonoBehaviour
 {
 
-    [SerializeField] public TileInfo tileInfo;
+    [SerializeField] public TileData tileData;
     [SerializeField] private GameObject queenPrefab;
     [SerializeField] private GameObject tileGO;
     private bool hasQueen = false;
@@ -15,23 +15,23 @@ public class MetaTile : MonoBehaviour
 
     public bool CheckSelfForUpdate()
     {
-        if (hasQueen != tileInfo.hasQueen)
+        if (hasQueen != tileData.hasQueen)
         {
-            if (tileInfo.hasQueen)
+            if (tileData.hasQueen)
             {
                 CreateQueen();
             }
-            else if (!tileInfo.hasQueen && objQueen != null)
+            else if (!tileData.hasQueen && objQueen != null)
             {
                 Destroy(objQueen);
             }
-            hasQueen = tileInfo.hasQueen;
+            hasQueen = tileData.hasQueen;
             return true;
         }
 
-        if (hasResource != tileInfo.hasResource)
+        if (hasResource != tileData.hasResource)
         {
-            hasResource = tileInfo.hasResource;
+            hasResource = tileData.hasResource;
            
             return true;
         }
@@ -43,26 +43,26 @@ public class MetaTile : MonoBehaviour
     {
         gM = FindObjectOfType<GameManager>();
         gM.onTick.AddListener(OnTick);
-        tileInfo.tilePosition = data.tilePosition;
-        tileInfo.neighborTiles = data.neighborTiles;
-        tileInfo.tileSize = data.tileSize;
-        tileInfo.pheromones = data.pheromones;
-        tileInfo.PheromonalDecayValuePerTick = data.PheromonalDecayValuePerTick;
-        gameObject.name = "Tile_" + tileInfo.tilePosition[0] + "_" + tileInfo.tilePosition[1];
+        tileData.tilePosition = data.tilePosition;
+        tileData.neighborTiles = data.neighborTiles;
+        tileData.tileSize = data.tileSize;
+        tileData.pheromones = data.pheromones;
+        tileData.PheromonalDecayValuePerTick = data.PheromonalDecayValuePerTick;
+        gameObject.name = "Tile_" + tileData.tilePosition[0] + "_" + tileData.tilePosition[1];
     }
     private void OnTick()
     {
-        // Debug.Log(gameObject.name + " status is : pheromones " +tileInfo.pheromones+ " has queen " + tileInfo.hasQueen + " has resource " + tileInfo.hasResource );
+        // Debug.Log(gameObject.name + " status is : pheromones " +tileData.pheromones+ " has queen " + tileData.hasQueen + " has resource " + tileData.hasResource );
         DecayPheromone();
     }
 
     private void DecayPheromone()
     {
-        foreach (var Phero in tileInfo.pheromones)
+        foreach (var Phero in tileData.pheromones)
         {
             if (Phero.Strength > 0)
             {
-                Phero.Strength -= tileInfo.PheromonalDecayValuePerTick;
+                Phero.Strength -= tileData.PheromonalDecayValuePerTick;
                 if (Phero.Strength <= 0)
                 {
                     Phero.Distance = null;
@@ -80,9 +80,9 @@ public class MetaTile : MonoBehaviour
         objQueen.GetComponent<Queen>().InitQueenData(this);
     }
 
-    public TileInfo GetTileInfo()
+    public TileData GetTileData()
     {
-        return tileInfo;
+        return tileData;
     }
 
     public Transform GetTileTransform()
@@ -92,7 +92,7 @@ public class MetaTile : MonoBehaviour
 
     public void UpdatePheromone(int? queen, int? resource, float markStrength)
     {
-        foreach(Pheromone pher in tileInfo.pheromones)
+        foreach(Pheromone pher in tileData.pheromones)
         {
             if(pher.Type == Pheromone.PheromoneType.Queen)
             {

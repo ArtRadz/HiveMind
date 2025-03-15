@@ -84,7 +84,7 @@ public class Queen : MonoBehaviour
         if (dronePrefab != null && droneSpawnPoint != null)
         {
             GameObject drone = Instantiate(dronePrefab, droneSpawnPoint.position, Quaternion.identity);
-            drone.GetComponent<Drone>().InitDrone(myTile);
+            drone.GetComponent<DroneBase>().InitDrone(myTile);
         }
         else
         {
