@@ -1,4 +1,4 @@
-public abstract class DroneBaseState {
+public abstract class DroneState {
     protected DroneBase drone;
     
     public DroneBaseState(DroneBase drone) {
