@@ -1,72 +1,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UQM = UniversalQualifierMarker;
 
 
 public class DronePathFinding : MonoBehaviour
 {
-    public MetaTile ChooseNextTile(TileData currentTileData, DroneData.DroneTargets currentTarget, int currentCounter)
+    public MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter)
     {
         MetaTile[] neighborTiles = currentTileData.neighborTiles;
         List<MetaTile> validNeighbors = neighborTiles.Where(tile => tile != null).ToList();
-        EvaluationStrategyManager.TargetEvaluationStrategy strategy =
-            EvaluationStrategyManager.targetStrategies[currentTarget];
         foreach (var entry in validNeighbors)
         {
-            if (strategy.IsDirectTarget(entry.GetTileData()))
+            if (EvaluationStrategyManager.DirectTargetCheck(entry.GetTileData(), currentTarget))
             {
                 return entry;
             }
         }
 
+        List<MetaTile> pheromoneCandidates = new List<MetaTile>();
+        int? bestValue = currentCounter != null ? currentCounter - 1 : null;
         foreach (var entry in validNeighbors)
         {
-            MetaTile pheromoneCandidate =
-                EvaluatePheromoneCandidate(entry, strategy.GetPheromoneDistance, currentCounter);
-            if (pheromoneCandidate != null)
+            int? phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
+            
+            if (phValue != null && (phValue <= bestValue || bestValue == null))
             {
-                return pheromoneCandidate;
+                bestValue = phValue;
+                pheromoneCandidates.Clear();
+                pheromoneCandidates.Add(entry);
             }
         }
 
-        MetaTile randomNeighbor = ChooseRandomNeighbor(validNeighbors);
-        return randomNeighbor;
-    }
+        if (pheromoneCandidates.Count == 1)
+        {
+            return pheromoneCandidates[0];
+        }
+        else if (pheromoneCandidates.Count > 1)
+        {
+            return ChooseRandomNeighbor(pheromoneCandidates);
+        }
 
-    // private MetaTile EvaluateDirectTarget(List<MetaTile> neighbors,
-    //     EvaluationStrategyManager.DirectTargetCheck isDirectTarget)
-    // {
-    //     foreach (MetaTile tile in neighbors)
-    //     {
-    //         TileData tileData = tile.GetTileData();
-    //         if (isDirectTarget(tileData))
-    //         {
-    //             return tile;
-    //         }
-    //     }
-    //
-    //     return null;
-    // }
-    //
-    // private MetaTile EvaluatePheromoneCandidate(List<MetaTile> neighbors,
-    //     EvaluationStrategyManager.PheromoneGetter getPheromoneDistance,
-    //     int currentCounter)
-    // {
-    //     MetaTile bestCandidate = null;
-    //     int bestDistance = currentCounter;
-    //     foreach (MetaTile tile in neighbors)
-    //     {
-    //         TileData tileData = tile.GetTileData();
-    //         int? distance = getPheromoneDistance(tileData);
-    //         if (distance.HasValue && distance.Value < bestDistance)
-    //         {
-    //             bestDistance = distance.Value;
-    //             bestCandidate = tile;
-    //         }
-    //     }
-    //
-    //     return bestCandidate;
-    // }
+        return ChooseRandomNeighbor(validNeighbors);
+    }
 
     private MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)
     {

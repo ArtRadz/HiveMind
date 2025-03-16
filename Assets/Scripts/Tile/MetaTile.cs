@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UQM = UniversalQualifierMarker;
 
 public class MetaTile : MonoBehaviour
 {
@@ -15,23 +16,23 @@ public class MetaTile : MonoBehaviour
 
     public bool CheckSelfForUpdate()
     {
-        if (hasQueen != tileData.hasQueen)
+        if (hasQueen != (tileData.tileSpecialType == UQM.Queen))
         {
-            if (tileData.hasQueen)
+            if (tileData.tileSpecialType == UQM.Queen)
             {
                 CreateQueen();
             }
-            else if (!tileData.hasQueen && objQueen != null)
+            else if (tileData.tileSpecialType != UQM.Queen && objQueen != null)
             {
                 Destroy(objQueen);
             }
-            hasQueen = tileData.hasQueen;
+            hasQueen = tileData.tileSpecialType == UQM.Queen;
             return true;
         }
 
-        if (hasResource != tileData.hasResource)
+        if (hasResource != (tileData.tileSpecialType == UQM.Resource))
         {
-            hasResource = tileData.hasResource;
+            hasResource = tileData.tileSpecialType == UQM.Resource;
            
             return true;
         }
@@ -90,26 +91,34 @@ public class MetaTile : MonoBehaviour
         return tileGO.transform;
     }
 
-    public void UpdatePheromone(int? queen, int? resource, float markStrength)
+    public void UpdatePheromone(int? distance, UQM type, float markStrength)
     {
-        foreach(Pheromone pher in tileData.pheromones)
+        foreach (Pheromone pher in tileData.pheromones)
         {
-            if(pher.Type == Pheromone.PheromoneType.Queen)
+            if (pher.Type == type)
             {
-                if ((queen != null && queen <= pher.Distance) || (queen != null && pher.Distance == null))
-                {
-                    pher.Distance = queen;
-                    pher.Strength += markStrength;
-                }
-            }
-            if(pher.Type == Pheromone.PheromoneType.Resource)
-            {
-                if ((resource != null && resource <= pher.Distance) || (resource != null && pher.Distance == null))
-                {
-                    pher.Distance = resource;
-                    pher.Strength += markStrength;
-                }
+                pher.Distance = distance;
+                pher.Strength += markStrength;
             }
         }
+        // foreach (Pheromone pher in tileData.pheromones)
+        // {
+        //     if(pher.Type == pheromone.Type.Queen)
+        //     {
+        //         if ((queen != null && queen <= pher.Distance) || (queen != null && pher.Distance == null))
+        //         {
+        //             pher.Distance = queen;
+        //             pher.Strength += markStrength;
+        //         }
+        //     }
+        //     if(pher.Type == pheromone.Type.Resource)
+        //     {
+        //         if ((resource != null && resource <= pher.Distance) || (resource != null && pher.Distance == null))
+        //         {
+        //             pher.Distance = resource;
+        //             pher.Strength += markStrength;
+        //         }
+        //     }
+        // }
     }
 }

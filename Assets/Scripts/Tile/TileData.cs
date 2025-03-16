@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UQM = UniversalQualifierMarker;
 [System.Serializable]
 public class TileData
 {
-    public bool hasResource;
-    public bool hasQueen;
+    public UQM tileSpecialType;
     public MetaTile[] neighborTiles;
     public int[] tilePosition;
     public Vector3 tileSize;

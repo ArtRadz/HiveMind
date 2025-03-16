@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UQM = UniversalQualifierMarker;
 
 [CreateAssetMenu(fileName = "TileData", menuName = "Tile/TileData", order = 1)]
 public class TileBlueprint : ScriptableObject
@@ -9,13 +10,11 @@ public class TileBlueprint : ScriptableObject
     public float PheromonalDecayValuePerTick;
     public List<Pheromone> pheromones = new List<Pheromone>();
     
-    public bool defaultHasResource = false;
-    public bool defaultHasQuin = false;
     public int[] tilePosition = new int[2];
     public MetaTile[] neighborTiles;
     public Vector3 tileSize;
- 
 
+    public UQM tileType;
 
     [Header("Visual Assets")]
     public TileBase defaultTile;    // Visual for a default tile.

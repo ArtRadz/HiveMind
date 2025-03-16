@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UQM = UniversalQualifierMarkers.UniversalQualifierMarker;
+using UQM = UniversalQualifierMarker;
 [System.Serializable]
 public class DroneData
 {
@@ -12,6 +12,7 @@ public class DroneData
     public float PheromonMarkStrength;
     public float Strength;
     public UQM Target;
-    public Dictionary<UQM , int?> PheromoneCounterFromOriginPoint;
+    public UQM PheromoneOriginPoint;
+    public Dictionary<UQM , int?> PheromoneCounter;
 
 }

@@ -41,7 +41,7 @@ public class DroneBase : MonoBehaviour
 
     private void LeavePheromoneMark()
     {
-        DroneData.currentTile.UpdatePheromone(queenCounter, resourceCounter, PheromonMarkStrength);
+        DroneData.currentTile.UpdatePheromone(droneData.PheromoneCounter[droneData.PheromoneOriginPoint],droneData.PheromoneOriginPoint , droneData.PheromonMarkStrength);
     }
 
 

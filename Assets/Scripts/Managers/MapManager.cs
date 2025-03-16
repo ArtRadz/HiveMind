@@ -63,7 +63,7 @@ public class MapManager : MonoBehaviour
         foreach (var tilePair in MetaTilesTMP)
         {
             MetaTile metaTile = tilePair.Value.GetComponent<MetaTile>();
-            bool hasChanged = metaTile.CheckSelfForUpdate();
+            bool hasChanged = metaTile.CheckSelfForUpdate(); //TODO this is a tmp implementation until I implement UI
             if (hasChanged)
             {
                 TileBlueprint _currentTileData = Instantiate(tileTemplate);

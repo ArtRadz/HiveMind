@@ -1,9 +1,4 @@
-
-
-public class UniversalQualifierMarkers
-{
-    public enum UniversalQualifierMarker
+public enum UniversalQualifierMarker
     {
         Queen, Resource
     }
-}
