@@ -20,6 +20,7 @@ public class DroneBase : MonoBehaviour
 
     private void OnTick()
     {
+        droneData.PheromoneCounter = CounterHandler.UpdateCounters(GetTileData(),droneData.Target,droneData.PheromoneCounter);
         currentState.Execute();
     }
 

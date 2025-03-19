@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         int i = 0;
         while (true)
         {
-            Debug.Log($"turn {i}");
+            // Debug.Log($"turn {i}");
             onTick.Invoke();
             i++;
             yield return new WaitForSeconds(tickTimeStep);

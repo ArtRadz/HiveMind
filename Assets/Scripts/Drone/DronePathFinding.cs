@@ -14,22 +14,19 @@ static class DronePathFinding
         {
             if (EvaluationStrategyManager.DirectTargetCheck(entry.GetTileData(), currentTarget))
             {
+                Debug.Log("DIRECT TARGET FOUND!!!!!!!!!!!!!!!!!!!!");
                 return entry;
             }
         }
 
         List<MetaTile> pheromoneCandidates = new List<MetaTile>();
-
-// Initialize bestValue to currentCounter - 1.
-        int bestValue = currentCounter - 1;
-
+        
+        int bestValue = (currentCounter > 0) ? currentCounter - 1 : int.MaxValue;
         foreach (var entry in validNeighbors)
         {
-            // Now EvaluatePheromone returns a non-nullable int.
             int phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
-    
-            // Compare directly since bestValue is non-null.
-            if (phValue <= bestValue)
+            Debug.Log("PHValue is : " + phValue + " and best value is : " + bestValue);
+            if (phValue < bestValue)
             {
                 bestValue = phValue;
                 pheromoneCandidates.Clear();
@@ -39,10 +36,12 @@ static class DronePathFinding
 
         if (pheromoneCandidates.Count == 1)
         {
+            Debug.Log("HOW DID I GET HERE 1???????????????");
             return pheromoneCandidates[0];
         }
         else if (pheromoneCandidates.Count > 1)
         {
+            Debug.Log("HOW DID I GET HERE 2???????????????");
             return ChooseRandomNeighbor(pheromoneCandidates);
         }
 
@@ -51,6 +50,7 @@ static class DronePathFinding
 
     private static MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)
     {
+        Debug.Log("I got here with those neighbours " + neighbors);
         return neighbors[Random.Range(0, neighbors.Count)];
     }
 }

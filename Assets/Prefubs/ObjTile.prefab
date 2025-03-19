@@ -49,12 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fe328646e646d4485259b7a6f2ec6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileInfo:
-    resourcePheromone: 0
-    hivePheromone: 0
-    hasResource: 0
-    hasQueen: 0
+  tileData:
+    tileSpecialType: 2
     neighborTiles: []
     tilePosition: 
+    tileSize: {x: 0, y: 0, z: 0}
+    pheromones:
+    - Type: 0
+    - Type: 1
+    - Type: 2
+    PheromonalDecayValuePerTick: 0
   queenPrefab: {fileID: 2345156230984066700, guid: c8b59725aefece04dbef2eec085a79ad, type: 3}
   tileGO: {fileID: 9174698289800893193}

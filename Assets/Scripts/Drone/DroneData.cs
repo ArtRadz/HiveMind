@@ -12,6 +12,8 @@ public class DroneData
     public float PheromonMarkStrength;
     public float Strength;
     public UQM Target;
+
+    public int bestStepToTarget = int.MaxValue;
     // public UQM PheromoneOriginPoint;
     public (UQM origin ,int distance) PheromoneCounter;
 

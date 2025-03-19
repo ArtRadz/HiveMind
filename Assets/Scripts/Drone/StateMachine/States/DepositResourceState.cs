@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DepositResourceState : DroneState
 {
-    private int placeHolderCounter = 3;
+    private int placeHolderCounter ;
     public DepositResourceState(DroneBase drone) : base(drone)
     {
         
     }
     public override void Enter()
     {
-        
+        placeHolderCounter = 3;
     }
 
     public override void Execute()
@@ -19,6 +19,10 @@ public class DepositResourceState : DroneState
         placeHolderCounter--;
         if (placeHolderCounter <= 0)
         {
+            drone.droneData.Target = UniversalQualifierMarker.Resource;
+            drone.droneData.bestStepToTarget = int.MaxValue;
+            drone.droneData.PheromoneCounter.origin = UniversalQualifierMarker.Queen;
+            drone.droneData.PheromoneCounter.distance = 0;
             drone.ChangeState(new SearchState(drone));
             return;
         }

@@ -75,7 +75,6 @@ public class Queen : MonoBehaviour
             currentResource -= costPerDrone;
             dronesSpawned++;
         }
-        Debug.Log($"Quin produced {dronesSpawned} drone(s). Current resource: {currentResource}");
     }
 
     // Instantiates a drone prefab at the spawn point.

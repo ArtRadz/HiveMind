@@ -39,8 +39,8 @@ public class SearchState : DroneState
             drone.ChangeState(nextState);
             return;
         }
-        droneData.PheromoneCounter = CounterHandler.UpdateCounters(tileData,droneData.Target,droneData.PheromoneCounter);
-        droneData.nextTile = DronePathFinding.ChooseNextTile(tileData,droneData.Target,droneData.PheromoneCounter.distance);
+        // droneData.PheromoneCounter = CounterHandler.UpdateCounters(tileData,droneData.Target,droneData.PheromoneCounter);
+        droneData.nextTile = DronePathFinding.ChooseNextTile(tileData,droneData.Target,droneData.bestStepToTarget);
         drone.LeavePheromoneMark();
         drone.MoveDrone();
         droneData.currentTile = droneData.nextTile;

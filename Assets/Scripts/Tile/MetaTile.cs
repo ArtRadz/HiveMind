@@ -42,15 +42,21 @@ public class MetaTile : MonoBehaviour
 
     public void Initialize(TileBlueprint data)
     {
+        tileData.pheromones = data.pheromones;
+        foreach (Pheromone pher in tileData.pheromones)
+        {
+            pher.Distance = int.MaxValue;
+        }
+
         gM = FindObjectOfType<GameManager>();
         gM.onTick.AddListener(OnTick);
         tileData.tileSpecialType = data.tileType;
         tileData.tilePosition = data.tilePosition;
         tileData.neighborTiles = data.neighborTiles;
         tileData.tileSize = data.tileSize;
-        tileData.pheromones = data.pheromones;
         tileData.PheromonalDecayValuePerTick = data.PheromonalDecayValuePerTick;
         gameObject.name = "Tile_" + tileData.tilePosition[0] + "_" + tileData.tilePosition[1];
+        
     }
     private void OnTick()
     {
