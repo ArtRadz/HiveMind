@@ -10,7 +10,7 @@ public static class EvaluationStrategyManager
         return tileData.tileSpecialType == uqmToCompare;
     }
 
-    public static int? EvaluatePheromone(TileData tileData, UQM uqmToCompare)
+    public static int EvaluatePheromone(TileData tileData, UQM uqmToCompare)
     {
         foreach (Pheromone pher in tileData.pheromones)
         {
@@ -20,6 +20,6 @@ public static class EvaluationStrategyManager
             }
 
         }
-        return null;
+        return int.MaxValue;
     }
 }

@@ -1,4 +1,4 @@
 public enum UniversalQualifierMarker
     {
-        Queen, Resource
+        Queen, Resource,DefaultTile
     }

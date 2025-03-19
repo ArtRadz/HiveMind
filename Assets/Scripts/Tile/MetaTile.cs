@@ -40,10 +40,11 @@ public class MetaTile : MonoBehaviour
         return false;
     }
 
-    public void Initialize(TileData data)
+    public void Initialize(TileBlueprint data)
     {
         gM = FindObjectOfType<GameManager>();
         gM.onTick.AddListener(OnTick);
+        tileData.tileSpecialType = data.tileType;
         tileData.tilePosition = data.tilePosition;
         tileData.neighborTiles = data.neighborTiles;
         tileData.tileSize = data.tileSize;
@@ -66,7 +67,7 @@ public class MetaTile : MonoBehaviour
                 Phero.Strength -= tileData.PheromonalDecayValuePerTick;
                 if (Phero.Strength <= 0)
                 {
-                    Phero.Distance = null;
+                    // Phero.Distance = null;
                     Phero.Strength = 0;
                 }
             }
@@ -91,34 +92,15 @@ public class MetaTile : MonoBehaviour
         return tileGO.transform;
     }
 
-    public void UpdatePheromone(int? distance, UQM type, float markStrength)
+    public void UpdatePheromone((UQM phType, int distance) droneCounter, float markStrength)
     {
         foreach (Pheromone pher in tileData.pheromones)
         {
-            if (pher.Type == type)
+            if (pher.Type == droneCounter.phType)
             {
-                pher.Distance = distance;
+                pher.Distance = droneCounter.distance;
                 pher.Strength += markStrength;
             }
         }
-        // foreach (Pheromone pher in tileData.pheromones)
-        // {
-        //     if(pher.Type == pheromone.Type.Queen)
-        //     {
-        //         if ((queen != null && queen <= pher.Distance) || (queen != null && pher.Distance == null))
-        //         {
-        //             pher.Distance = queen;
-        //             pher.Strength += markStrength;
-        //         }
-        //     }
-        //     if(pher.Type == pheromone.Type.Resource)
-        //     {
-        //         if ((resource != null && resource <= pher.Distance) || (resource != null && pher.Distance == null))
-        //         {
-        //             pher.Distance = resource;
-        //             pher.Strength += markStrength;
-        //         }
-        //     }
-        // }
     }
 }

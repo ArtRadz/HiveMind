@@ -4,9 +4,9 @@ using UnityEngine;
 using UQM = UniversalQualifierMarker;
 
 
-public class DronePathFinding : MonoBehaviour
+static class DronePathFinding 
 {
-    public MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter)
+   public static MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int currentCounter)
     {
         MetaTile[] neighborTiles = currentTileData.neighborTiles;
         List<MetaTile> validNeighbors = neighborTiles.Where(tile => tile != null).ToList();
@@ -19,12 +19,17 @@ public class DronePathFinding : MonoBehaviour
         }
 
         List<MetaTile> pheromoneCandidates = new List<MetaTile>();
-        int? bestValue = currentCounter != null ? currentCounter - 1 : null;
+
+// Initialize bestValue to currentCounter - 1.
+        int bestValue = currentCounter - 1;
+
         foreach (var entry in validNeighbors)
         {
-            int? phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
-            
-            if (phValue != null && (phValue <= bestValue || bestValue == null))
+            // Now EvaluatePheromone returns a non-nullable int.
+            int phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
+    
+            // Compare directly since bestValue is non-null.
+            if (phValue <= bestValue)
             {
                 bestValue = phValue;
                 pheromoneCandidates.Clear();
@@ -44,7 +49,7 @@ public class DronePathFinding : MonoBehaviour
         return ChooseRandomNeighbor(validNeighbors);
     }
 
-    private MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)
+    private static MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)
     {
         return neighbors[Random.Range(0, neighbors.Count)];
     }

@@ -12,7 +12,7 @@ public class DroneData
     public float PheromonMarkStrength;
     public float Strength;
     public UQM Target;
-    public UQM PheromoneOriginPoint;
-    public Dictionary<UQM , int?> PheromoneCounter;
+    // public UQM PheromoneOriginPoint;
+    public (UQM origin ,int distance) PheromoneCounter;
 
 }

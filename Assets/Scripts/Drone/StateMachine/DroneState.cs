@@ -1,10 +1,12 @@
-public abstract class DroneState {
+public abstract class DroneState
+{
     protected DroneBase drone;
-    
-    public DroneBaseState(DroneBase drone) {
+
+    protected DroneState(DroneBase drone)
+    {
         this.drone = drone;
     }
-    
+
     public abstract void Enter();
     public abstract void Execute();
     public abstract void Exit();

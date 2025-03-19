@@ -14,7 +14,7 @@ public class TileBlueprint : ScriptableObject
     public MetaTile[] neighborTiles;
     public Vector3 tileSize;
 
-    public UQM tileType;
+    public UQM tileType = UQM.DefaultTile;
 
     [Header("Visual Assets")]
     public TileBase defaultTile;    // Visual for a default tile.

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UQM = UniversalQualifierMarker;
 
 public class MapManager : MonoBehaviour
 {
@@ -68,11 +69,11 @@ public class MapManager : MonoBehaviour
             {
                 TileBlueprint _currentTileData = Instantiate(tileTemplate);
                 TileBase tileToSet = _currentTileData.defaultTile;
-                if (metaTile.tileData.hasQueen)
+                if (metaTile.tileData.tileSpecialType == UQM.Queen)
                 {
                     tileToSet = _currentTileData.queenTile;
                 }
-                else if (metaTile.tileData.hasResource)
+                else if (metaTile.tileData.tileSpecialType==UQM.Resource)
                 {
                     tileToSet = _currentTileData.resourceTile;
                 }

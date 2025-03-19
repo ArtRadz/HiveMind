@@ -1,28 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UQM = UniversalQualifierMarker;
+using static DronePathFinding;
+using static CounterHandler;
 
 public class SearchState : DroneState
 {
-    public DroneData.DroneTargets currentTarget;
 
-    public SearchState(DroneBase drone, DroneData.DroneTargets target) : base(drone) {
-        currentTarget = target;
+    public SearchState(DroneBase drone) : base(drone)
+    {
+        
     }
 
-    public override void Enter() 
+    public override void Enter()
     {
-        Debug.Log("Entering SearchState with target: " + currentTarget);
+        
     }
 
-    public override void Execute() 
+    public override void Execute()
     {
-        drone.droneData.nextTile = DronePathFinding.ChooseNextTile(drone.GetTileInfo());
+        DroneData droneData = drone.droneData;
+        TileData tileData = drone.GetTileData();
+        if (tileData.tileSpecialType == droneData.Target)
+        {
+            DroneState nextState;
+            if (droneData.Target == UQM.Resource)
+            {
+                nextState = new GatherResourcesState(drone);
+            }
+
+            // if (droneData.Target == UQM.Queen)
+            else
+            {
+                nextState = new DepositResourceState(drone);
+            }
+            droneData.Target = droneData.PheromoneCounter.origin;
+            drone.ChangeState(nextState);
+            return;
+        }
+        droneData.PheromoneCounter = CounterHandler.UpdateCounters(tileData,droneData.Target,droneData.PheromoneCounter);
+        droneData.nextTile = DronePathFinding.ChooseNextTile(tileData,droneData.Target,droneData.PheromoneCounter.distance);
+        drone.LeavePheromoneMark();
+        drone.MoveDrone();
+        droneData.currentTile = droneData.nextTile;
     }
 
-    public override void Exit() 
+    public override void Exit()
     {
-        // Cleanup logic when exiting the state.
-        Debug.Log("Exiting SearchState.");
+        
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UQM = UniversalQualifierMarker;
 public class DroneBase : MonoBehaviour
 {
     private DroneState currentState;
@@ -11,18 +11,16 @@ public class DroneBase : MonoBehaviour
     public void InitDrone(MetaTile _currentTile)
     {
         droneData.currentTile = _currentTile;
+        droneData.Target = UQM.Resource;
+        droneData.PheromoneCounter = (UQM.Queen, 0);
+        currentState = new SearchState(this); //Todo currently first state is hardcoded refactor when relevant (probably when more than 1type of drones)
         GameManager gm = FindObjectOfType<GameManager>();
         gm.onTick.AddListener(OnTick);
     }
 
     private void OnTick()
     {
-        // GetTileInfo();
-        // UpdateTimers();
-        // LeavePheromoneMark();
-        // ChooseNextTile();
-        // MoveDrone();
-        // currentTile = nextTile;
+        currentState.Execute();
     }
 
     public void ChangeState(DroneState newState)
@@ -32,21 +30,21 @@ public class DroneBase : MonoBehaviour
         currentState.Enter();
     }
 
-    public MetaTile GetTileData()
+    public TileData GetTileData()
     {
-        TileData currentTileData = DroneData.currentTile.GetTileData();
+        TileData currentTileData = droneData.currentTile.GetTileData();
         return currentTileData;
     }
 
 
-    private void LeavePheromoneMark()
+    public void LeavePheromoneMark()
     {
-        DroneData.currentTile.UpdatePheromone(droneData.PheromoneCounter[droneData.PheromoneOriginPoint],droneData.PheromoneOriginPoint , droneData.PheromonMarkStrength);
+        droneData.currentTile.UpdatePheromone(droneData.PheromoneCounter , droneData.PheromonMarkStrength);
     }
 
 
-    private void MoveDrone()
+    public void MoveDrone()
     {
-        transform.position = DroneData.nextTile.GetTileTransform().position;
+        transform.position = droneData.nextTile.GetTileTransform().position;
     }
 }
