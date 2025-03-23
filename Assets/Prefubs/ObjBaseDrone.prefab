@@ -45,8 +45,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c612afea3c8c08547806fed8c89c5f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PheromonMarkStrength: 50
-  SR: {fileID: 319277458781347541}
+  droneData:
+    currentTile: {fileID: 0}
+    nextTile: {fileID: 0}
+    currentTileData:
+      tileSpecialType: 0
+      neighborTiles: []
+      tilePosition: 
+      tileSize: {x: 0, y: 0, z: 0}
+      pheromones: []
+      PheromonalDecayValuePerTick: 0
+      maxPheromoneStrength: 100
+    nextTileData:
+      tileSpecialType: 0
+      neighborTiles: []
+      tilePosition: 
+      tileSize: {x: 0, y: 0, z: 0}
+      pheromones: []
+      PheromonalDecayValuePerTick: 0
+      maxPheromoneStrength: 100
+    PheromonMarkStrength: 50
+    Strength: 0
+    Target: 0
+    bestStepToTarget: 2147483647
 --- !u!1 &319277458781347539
 GameObject:
   m_ObjectHideFlags: 0

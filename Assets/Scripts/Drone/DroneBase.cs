@@ -11,8 +11,9 @@ public class DroneBase : MonoBehaviour
     public void InitDrone(MetaTile _currentTile)
     {
         droneData.currentTile = _currentTile;
-        droneData.Target = UQM.Resource;
-        droneData.PheromoneCounter = (UQM.Queen, 0);
+        // droneData.Target = UQM.Resource;
+        droneData.PheromoneCounterToOrigin = (UQM.Queen, 0);
+        droneData.PheromoneCounterToTarget = (UQM.Resource, null);
         currentState = new SearchState(this); //Todo currently first state is hardcoded refactor when relevant (probably when more than 1type of drones)
         GameManager gm = FindObjectOfType<GameManager>();
         gm.onTick.AddListener(OnTick);
@@ -20,7 +21,7 @@ public class DroneBase : MonoBehaviour
 
     private void OnTick()
     {
-        droneData.PheromoneCounter = CounterHandler.UpdateCounters(GetTileData(),droneData.Target,droneData.PheromoneCounter);
+        
         currentState.Execute();
     }
 
@@ -40,7 +41,7 @@ public class DroneBase : MonoBehaviour
 
     public void LeavePheromoneMark()
     {
-        droneData.currentTile.UpdatePheromone(droneData.PheromoneCounter , droneData.PheromonMarkStrength);
+        droneData.currentTile.UpdatePheromone(droneData.PheromoneCounterToOrigin , droneData.PheromonMarkStrength);
     }
 
 

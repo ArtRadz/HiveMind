@@ -6,7 +6,7 @@ using UQM = UniversalQualifierMarker;
 
 static class DronePathFinding 
 {
-   public static MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int currentCounter)
+   public static MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter)
     {
         MetaTile[] neighborTiles = currentTileData.neighborTiles;
         List<MetaTile> validNeighbors = neighborTiles.Where(tile => tile != null).ToList();
@@ -20,28 +20,29 @@ static class DronePathFinding
         }
 
         List<MetaTile> pheromoneCandidates = new List<MetaTile>();
-        
-        int bestValue = (currentCounter > 0) ? currentCounter - 1 : int.MaxValue;
+
+        int? bestValue = currentCounter;
         foreach (var entry in validNeighbors)
         {
-            int phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
-            Debug.Log("PHValue is : " + phValue + " and best value is : " + bestValue);
-            if (phValue < bestValue)
+            int? phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
+            if (phValue != null)
             {
-                bestValue = phValue;
-                pheromoneCandidates.Clear();
-                pheromoneCandidates.Add(entry);
+                Debug.Log("PHValue is : " + phValue + " and best value is : " + bestValue);
+                if (bestValue==null || phValue<bestValue)
+                {
+                    bestValue = phValue;
+                    pheromoneCandidates.Add(entry);
+                    
+                }
             }
         }
 
-        if (pheromoneCandidates.Count == 1)
+        pheromoneCandidates = pheromoneCandidates
+            .Where(entry => EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget) == bestValue)
+            .ToList();
+
+        if (pheromoneCandidates.Count >0)
         {
-            Debug.Log("HOW DID I GET HERE 1???????????????");
-            return pheromoneCandidates[0];
-        }
-        else if (pheromoneCandidates.Count > 1)
-        {
-            Debug.Log("HOW DID I GET HERE 2???????????????");
             return ChooseRandomNeighbor(pheromoneCandidates);
         }
 
@@ -50,7 +51,7 @@ static class DronePathFinding
 
     private static MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)
     {
-        Debug.Log("I got here with those neighbours " + neighbors);
+        // Debug.Log("I got here with those neighbours " + neighbors)//;
         return neighbors[Random.Range(0, neighbors.Count)];
     }
 }

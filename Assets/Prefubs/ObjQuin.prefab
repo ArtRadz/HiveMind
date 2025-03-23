@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialResourceCount: 200
   resourceDeliveryValue: 10
-  productionIntervalTicks: 10
-  maxDronesPerCycle: 1
+  productionIntervalTicks: 1
+  maxDronesPerCycle: 10
   costPerDrone: 1
   dronePrefab: {fileID: 319277458489709613, guid: 3f567a2167e9d0b4ea2a7238ff608ac4, type: 3}
   droneSpawnPoint: {fileID: 703373648754226657}

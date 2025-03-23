@@ -13,6 +13,7 @@ public class TileBlueprint : ScriptableObject
     public int[] tilePosition = new int[2];
     public MetaTile[] neighborTiles;
     public Vector3 tileSize;
+    public float maxPheromoneStrength = 100f;
 
     public UQM tileType = UQM.DefaultTile;
 

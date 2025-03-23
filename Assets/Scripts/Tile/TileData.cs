@@ -11,4 +11,6 @@ public class TileData
     public Vector3 tileSize;
     public List<Pheromone> pheromones = new List<Pheromone>();
     public float PheromonalDecayValuePerTick;
+    public float maxPheromoneStrength = 100f;
+
 }

@@ -20,10 +20,8 @@ public class GatherResourcesState : DroneState
         placeHolderCounter--;
         if (placeHolderCounter <= 0)
         {
-            drone.droneData.Target = UniversalQualifierMarker.Queen;
-            drone.droneData.bestStepToTarget = int.MaxValue;
-            drone.droneData.PheromoneCounter.origin = UniversalQualifierMarker.Resource;
-            drone.droneData.PheromoneCounter.distance = 0;
+            drone.droneData.PheromoneCounterToTarget = (UniversalQualifierMarker.Queen , null);
+            drone.droneData.PheromoneCounterToOrigin = (UniversalQualifierMarker.Resource,0);
             drone.ChangeState(new SearchState(drone));
             return;
         }

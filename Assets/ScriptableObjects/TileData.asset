@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7b27a541c014a42b1d96bad39d1191, type: 3}
   m_Name: TileData
   m_EditorClassIdentifier: 
-  PheromonalDecayValuePerTick: 0.2
+  PheromonalDecayValuePerTick: 0
   pheromones:
   - Type: 0
   - Type: 1
@@ -20,6 +20,7 @@ MonoBehaviour:
   tilePosition: 0000000000000000
   neighborTiles: []
   tileSize: {x: 0, y: 0, z: 0}
+  maxPheromoneStrength: 100
   tileType: 2
   defaultTile: {fileID: 11400000, guid: d5a2bb791708cb849b7467487bf21d42, type: 2}
   resourceTile: {fileID: 11400000, guid: 246ac561d53b38a45abcaccaf3d4f2f0, type: 2}

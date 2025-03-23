@@ -6,22 +6,26 @@ using UQM = UniversalQualifierMarker;
 
 static class CounterHandler 
 {
-    public static (UQM, int) UpdateCounters(TileData currentTileData, UQM target, (UQM origin, int distance) counter)
+    public static (UQM, int?) UpdateCounters(TileData currentTileData, (UQM uqmToCompare, int? distance)counter)
     {
-        if (EvaluationStrategyManager.DirectTargetCheck(currentTileData, target))
+        if (EvaluationStrategyManager.DirectTargetCheck(currentTileData, counter.uqmToCompare))
         {
-            counter.origin = target;
             counter.distance = 0;
             return counter;
         }
-        int evaluatedValue = EvaluationStrategyManager.EvaluatePheromone(currentTileData, counter.origin);
-        if (evaluatedValue < counter.distance)
+        int? evaluatedValue = EvaluationStrategyManager.EvaluatePheromone(currentTileData, counter.uqmToCompare);
+        if (evaluatedValue!=null)
         {
-            counter.distance = evaluatedValue;
-            return counter;
+            if (evaluatedValue < counter.distance || counter.distance==null)
+            {
+                counter.distance = evaluatedValue;
+                return counter;
+            }
         }
-
-        counter.distance++;
+        if (counter.distance!=null)
+        {
+            counter.distance++;
+        }
         return counter;
     }
 }

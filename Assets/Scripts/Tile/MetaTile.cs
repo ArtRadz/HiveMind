@@ -45,7 +45,7 @@ public class MetaTile : MonoBehaviour
         tileData.pheromones = data.pheromones;
         foreach (Pheromone pher in tileData.pheromones)
         {
-            pher.Distance = int.MaxValue;
+            pher.Distance = null;
         }
 
         gM = FindObjectOfType<GameManager>();
@@ -73,7 +73,7 @@ public class MetaTile : MonoBehaviour
                 Phero.Strength -= tileData.PheromonalDecayValuePerTick;
                 if (Phero.Strength <= 0)
                 {
-                    // Phero.Distance = null;
+                    Phero.Distance = null;
                     Phero.Strength = 0;
                 }
             }
@@ -98,14 +98,15 @@ public class MetaTile : MonoBehaviour
         return tileGO.transform;
     }
 
-    public void UpdatePheromone((UQM phType, int distance) droneCounter, float markStrength)
+    public void UpdatePheromone((UQM phType, int? distance) droneCounter, float markStrength)
     {
         foreach (Pheromone pher in tileData.pheromones)
         {
             if (pher.Type == droneCounter.phType)
             {
+                Debug.Log("tile updated " + droneCounter.phType+" "+ droneCounter.distance);
                 pher.Distance = droneCounter.distance;
-                pher.Strength += markStrength;
+                pher.Strength = Mathf.Clamp(pher.Strength + markStrength, 0f, tileData.maxPheromoneStrength);
             }
         }
     }
