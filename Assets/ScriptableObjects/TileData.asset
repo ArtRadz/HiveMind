@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7b27a541c014a42b1d96bad39d1191, type: 3}
   m_Name: TileData
   m_EditorClassIdentifier: 
-  PheromonalDecayValuePerTick: 0
+  PheromonalDecayValuePerTick: 0.5
   pheromones:
   - Type: 0
   - Type: 1
