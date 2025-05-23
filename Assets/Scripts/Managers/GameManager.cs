@@ -5,26 +5,23 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    public UnityEvent onTick;
+    public UnityEvent<float> onTick;
     [SerializeField] private float tickTimeStep;
     // Start is called before the first frame update
     void Start()
     {
         if (onTick == null)
         {
-            onTick = new UnityEvent();
+            onTick = new UnityEvent<float>();
         }
         StartCoroutine(FireTimeStepEvent());  
     }
 
     private IEnumerator FireTimeStepEvent()
     {
-        int i = 0;
         while (true)
         {
-            // Debug.Log($"turn {i}");
-            onTick.Invoke();
-            i++;
+            onTick.Invoke(tickTimeStep);
             yield return new WaitForSeconds(tickTimeStep);
         }
     }

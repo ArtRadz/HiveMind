@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UQM = UniversalQualifierMarker;
@@ -19,9 +19,8 @@ public class DroneBase : MonoBehaviour
         gm.onTick.AddListener(OnTick);
     }
 
-    private void OnTick()
+    private void OnTick(float tickDuration)
     {
-        
         currentState.Execute();
     }
 
@@ -47,6 +46,36 @@ public class DroneBase : MonoBehaviour
 
     public void MoveDrone()
     {
-        transform.position = droneData.nextTile.GetTileTransform().position;
+        // transform.position = droneData.nextTile.GetTileTransform().position;
+        StartCoroutine(SmoothMove(transform.position, droneData.nextTile.GetTileTransform().position, 0.5f));
+        // Vector3 start = transform.position;
+        // Vector3 end = droneData.nextTile.GetTileTransform().position;
+        //
+        // int steps = 999; // Number of visual steps, higher = smoother
+        // float stepSize = 1f / steps;
+        //
+        // for (int i = 1; i <= steps; i++)
+        // {
+        //     float t = i * stepSize;
+        //     transform.position = Vector3.Lerp(start, end, t);
+        // }
+        //
+        // // Final snap to ensure no rounding errors
+        // transform.position = end;
+    }
+    private IEnumerator SmoothMove(Vector3 start, Vector3 end, float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(start, end, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = end;
+
+        // Clear coroutine reference when done
+        // currentMoveCoroutine = null;
     }
 }
