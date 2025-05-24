@@ -9,7 +9,7 @@ static class DronePathFinding
    public static MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter)
     {
         MetaTile[] neighborTiles = currentTileData.neighborTiles;
-        List<MetaTile> validNeighbors = neighborTiles.Where(tile => tile != null).ToList();
+        List<MetaTile> validNeighbors = neighborTiles.Where(tile => tile != null && tile.tileData.tileSpecialType != UQM.Blocker).ToList();
         foreach (var entry in validNeighbors)
         {
             if (EvaluationStrategyManager.DirectTargetCheck(entry.GetTileData(), currentTarget))

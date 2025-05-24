@@ -8,6 +8,8 @@ public class DroneBase : MonoBehaviour
 
     public DroneData droneData;
 
+    private float remainingTickDuration;
+
     public void InitDrone(MetaTile _currentTile)
     {
         droneData.currentTile = _currentTile;
@@ -21,7 +23,21 @@ public class DroneBase : MonoBehaviour
 
     private void OnTick(float tickDuration)
     {
+        StartCoroutine(TickCountdownCoroutine(tickDuration));
         currentState.Execute();
+    }
+    
+    private IEnumerator TickCountdownCoroutine(float tickDuration)
+    {
+        remainingTickDuration = tickDuration;
+
+        while (remainingTickDuration > 0f)
+        {
+            remainingTickDuration -= Time.deltaTime;
+            yield return null; 
+        }
+
+        remainingTickDuration = 0f; 
     }
 
     public void ChangeState(DroneState newState)
@@ -47,7 +63,7 @@ public class DroneBase : MonoBehaviour
     public void MoveDrone()
     {
         // transform.position = droneData.nextTile.GetTileTransform().position;
-        StartCoroutine(SmoothMove(transform.position, droneData.nextTile.GetTileTransform().position, 0.5f));
+        StartCoroutine(SmoothMove(transform.position, droneData.nextTile.GetTileTransform().position, remainingTickDuration));
         // Vector3 start = transform.position;
         // Vector3 end = droneData.nextTile.GetTileTransform().position;
         //

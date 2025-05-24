@@ -21,4 +21,5 @@ public class TileBlueprint : ScriptableObject
     public TileBase defaultTile;    // Visual for a default tile.
     public TileBase resourceTile;   // Visual for a tile with a resource.
     public TileBase queenTile;       // Visual for a tile with a Quin (hive).
+    public TileBase blockerTile;       // Visual for a tile with a Quin (hive).
 }

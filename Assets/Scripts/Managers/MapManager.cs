@@ -54,7 +54,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    private void OnTick()
+    private void OnTick(float tickDuration)
     {
         TMPTIleUpdate();
     }
@@ -76,6 +76,10 @@ public class MapManager : MonoBehaviour
                 else if (metaTile.tileData.tileSpecialType==UQM.Resource)
                 {
                     tileToSet = _currentTileData.resourceTile;
+                }
+                else if (metaTile.tileData.tileSpecialType==UQM.Blocker)
+                {
+                    tileToSet = _currentTileData.blockerTile;
                 }
                 Vector3Int cellPos = new Vector3Int(metaTile.tileData.tilePosition[0], metaTile.tileData.tilePosition[1], 0);
                 

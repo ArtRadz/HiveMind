@@ -53,7 +53,7 @@ public class Queen : MonoBehaviour
     {
         myTile = parentTile;
     }
-    private void OnTick()
+    private void OnTick(float tickDuration)
     {
         tickCounter++;
 

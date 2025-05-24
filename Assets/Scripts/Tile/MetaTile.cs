@@ -11,6 +11,7 @@ public class MetaTile : MonoBehaviour
     [SerializeField] private GameObject tileGO;
     private bool hasQueen = false;
     private bool hasResource = false;
+    private bool hasBlocker = false;
     private GameObject objQueen;
     private GameManager gM;
 
@@ -37,6 +38,12 @@ public class MetaTile : MonoBehaviour
             return true;
         }
 
+        if (hasBlocker != (tileData.tileSpecialType == UQM.Blocker))
+        {
+            hasBlocker = tileData.tileSpecialType == UQM.Blocker;
+            return true;
+        }
+
         return false;
     }
 
@@ -58,7 +65,7 @@ public class MetaTile : MonoBehaviour
         gameObject.name = "Tile_" + tileData.tilePosition[0] + "_" + tileData.tilePosition[1];
         
     }
-    private void OnTick()
+    private void OnTick(float tickDuration)
     {
         // Debug.Log(gameObject.name + " status is : pheromones " +tileData.pheromones+ " has queen " + tileData.hasQueen + " has resource " + tileData.hasResource );
         DecayPheromone();
