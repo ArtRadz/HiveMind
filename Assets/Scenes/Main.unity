@@ -419,11 +419,11 @@ PrefabInstance:
       objectReference: {fileID: 256433140}
     - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}
       propertyPath: gridWidth
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}
       propertyPath: gridHeight
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}
       propertyPath: metaTilePrefab
