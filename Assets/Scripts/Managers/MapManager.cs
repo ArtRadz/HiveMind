@@ -179,8 +179,7 @@ public class MapManager : MonoBehaviour
         Vector3 tileSize = sampleTile.sprite.bounds.size;      // already a Vector3
 
         HexRadius   = tileSize.y * 0.5f;                       // flat-top rule r = H / 2
-        BoardOrigin = tilemap.CellToWorld(Vector3Int.zero) +
-                      new Vector3(tileSize.x * 0.5f, tileSize.y * 0.5f, 0f);
+        BoardOrigin = tilemap.GetCellCenterWorld(Vector3Int.zero);
 
         tilemap.layoutGrid.cellSize = tileSize;                // set once
 
