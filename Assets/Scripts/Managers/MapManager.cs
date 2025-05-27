@@ -9,6 +9,8 @@ public class MapManager : MonoBehaviour
     private int gridWidth = 10;
 
     [SerializeField] private int gridHeight = 10;
+    public float  HexRadius  { get; private set; }
+    public Vector3 BoardOrigin { get; private set; }
 
     [Header("Tile Template")] [SerializeField]
     private TileBlueprint tileTemplate;
@@ -170,22 +172,34 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    private void PopulateTileMap( Dictionary<Vector2Int,TileBlueprint> _tileDatas)
+    private void PopulateTileMap(Dictionary<Vector2Int, TileBlueprint> _tileDatas)
     {
+        // --- sample tile to derive scale -----------------------------
+        Tile sampleTile = _tileDatas[new Vector2Int(0, 0)].defaultTile as Tile;
+        Vector3 tileSize = sampleTile.sprite.bounds.size;      // already a Vector3
+
+        HexRadius   = tileSize.y * 0.5f;                       // flat-top rule r = H / 2
+        BoardOrigin = tilemap.CellToWorld(Vector3Int.zero) +
+                      new Vector3(tileSize.x * 0.5f, tileSize.y * 0.5f, 0f);
+
+        tilemap.layoutGrid.cellSize = tileSize;                // set once
+
+        // --- paint the visual grid -----------------------------------
         for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < gridHeight; y++)
             {
                 Vector3Int cellPos = new Vector3Int(x, y, 0);
-                Vector2Int key = new Vector2Int(x, y);
-                tilemap.SetTile(cellPos,_tileDatas[key].defaultTile);
-                Tile tile = _tileDatas[key].defaultTile as Tile;
-                Vector3 tileSize = tile.sprite.bounds.size;
-                tilemap.layoutGrid.cellSize = tileSize;
-                _tileDatas[key].tileSize = tileSize;
+                Vector2Int key     = new Vector2Int(x, y);
+
+                tilemap.SetTile(cellPos, _tileDatas[key].defaultTile);
+
+                // OPTIONAL: keep if each blueprint truly needs its own copy
+                // _tileDatas[key].tileSize = tileSize;
             }
         }
     }
+
 
     private void SetMetaTileData( Dictionary<Vector2Int,TileBlueprint> _tileDatas, Dictionary<Vector2Int,GameObject> _metaTiles)
     {
