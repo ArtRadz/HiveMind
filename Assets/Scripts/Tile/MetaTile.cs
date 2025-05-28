@@ -62,7 +62,7 @@ public class MetaTile : MonoBehaviour
         tileData.neighborTiles = data.neighborTiles;
         tileData.tileSize = data.tileSize;
         tileData.PheromonalDecayValuePerTick = data.PheromonalDecayValuePerTick;
-        gameObject.name = "Tile_" + tileData.tilePosition[0] + "_" + tileData.tilePosition[1];
+        gameObject.name = "Tile_" + tileData.tilePosition[1] + "_" + tileData.tilePosition[0];
         
     }
     private void OnTick(float tickDuration)
