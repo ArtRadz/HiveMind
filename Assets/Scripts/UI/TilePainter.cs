@@ -30,21 +30,23 @@ public class TilePainter : MonoBehaviour
             Cycle(1);
 
         // left-click to paint
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            // 1) project mouse into world at the tilemap's Z-plane
+            
             Vector3 mouse = Input.mousePosition;
             mouse.z       = mapManager.BoardOrigin.z - cam.transform.position.z;
             Vector3 world = cam.ScreenToWorldPoint(mouse);
 
-            // 2) ask the Tilemap for the cell under that world point
+            
             Vector3Int cell = mapManager.tilemap.WorldToCell(world);
             Vector2Int key  = new Vector2Int(cell.x, cell.y);
 
-            // 3) lookup and paint
-            var metaGO = mapManager.MetaTiles[key];
-            metaGO.GetComponent<MetaTile>()
-                .TrySetSpecial(_brushes[_currentIndex]);
+            if (mapManager.MetaTiles.ContainsKey(key))
+            {
+                var metaGO = mapManager.MetaTiles[key];
+                metaGO.GetComponent<MetaTile>()
+                    .TrySetSpecial(_brushes[_currentIndex]);
+            }
         }
     }
 
