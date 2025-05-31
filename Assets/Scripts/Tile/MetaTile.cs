@@ -14,41 +14,44 @@ public class MetaTile : MonoBehaviour
     private bool hasBlocker = false;
     private GameObject objQueen;
     private GameManager gM;
+    private MapManager mapManager;
 
-    public bool CheckSelfForUpdate()
+    private Vector2Int axialCoords;
+    // public bool CheckSelfForUpdate()
+    // {
+    //     if (hasQueen != (tileData.tileSpecialType == UQM.Queen))
+    //     {
+    //     if (tileData.tileSpecialType == UQM.Queen)
+    //     {
+    //         CreateQueen();
+    //     }
+    //     else if (tileData.tileSpecialType != UQM.Queen && objQueen != null)
+    //     {
+    //         Destroy(objQueen);
+    //     }
+    //     hasQueen = tileData.tileSpecialType == UQM.Queen;
+    //     return true;
+    // }
+    //
+    //     if (hasResource != (tileData.tileSpecialType == UQM.Resource))
+    //     {
+    //         hasResource = tileData.tileSpecialType == UQM.Resource;
+    //        
+    //         return true;
+    //     }
+    //
+    //     if (hasBlocker != (tileData.tileSpecialType == UQM.Blocker))
+    //     {
+    //         hasBlocker = tileData.tileSpecialType == UQM.Blocker;
+    //         return true;
+    //     }
+    //
+    //     return false;
+    // }
+
+    public void Initialize(TileBlueprint data,MapManager mp)
     {
-        if (hasQueen != (tileData.tileSpecialType == UQM.Queen))
-        {
-            if (tileData.tileSpecialType == UQM.Queen)
-            {
-                CreateQueen();
-            }
-            else if (tileData.tileSpecialType != UQM.Queen && objQueen != null)
-            {
-                Destroy(objQueen);
-            }
-            hasQueen = tileData.tileSpecialType == UQM.Queen;
-            return true;
-        }
-
-        if (hasResource != (tileData.tileSpecialType == UQM.Resource))
-        {
-            hasResource = tileData.tileSpecialType == UQM.Resource;
-           
-            return true;
-        }
-
-        if (hasBlocker != (tileData.tileSpecialType == UQM.Blocker))
-        {
-            hasBlocker = tileData.tileSpecialType == UQM.Blocker;
-            return true;
-        }
-
-        return false;
-    }
-
-    public void Initialize(TileBlueprint data)
-    {
+        mapManager = mp;
         tileData.pheromones = data.pheromones;
         foreach (Pheromone pher in tileData.pheromones)
         {
@@ -63,6 +66,7 @@ public class MetaTile : MonoBehaviour
         tileData.tileSize = data.tileSize;
         tileData.PheromonalDecayValuePerTick = data.PheromonalDecayValuePerTick;
         gameObject.name = "Tile_" + tileData.tilePosition[1] + "_" + tileData.tilePosition[0];
+        axialCoords = new Vector2Int(tileData.tilePosition[0], tileData.tilePosition[1]);
         
     }
     private void OnTick(float tickDuration)
@@ -116,5 +120,37 @@ public class MetaTile : MonoBehaviour
                 pher.Strength = Mathf.Clamp(pher.Strength + markStrength, 0f, tileData.maxPheromoneStrength);
             }
         }
+    }
+    public Vector3 GetRandomPoint()
+    {
+        
+        
+        return HexGridUtil.GetRandomPointInCell(
+            
+            axialCoords,
+            mapManager.HexRadius,
+            mapManager.BoardOrigin
+        );
+    }
+
+    public void TrySetSpecial(UQM newUQM)
+    {
+        if (newUQM == tileData.tileSpecialType)
+        {
+            return;
+        }
+
+        tileData.tileSpecialType = newUQM;
+
+            if (tileData.tileSpecialType == UQM.Queen)
+            {
+                CreateQueen();
+            }
+            else if (tileData.tileSpecialType != UQM.Queen && objQueen != null)
+            {
+                Destroy(objQueen);
+            }
+        
+        mapManager.UpdateTile(transform.position, newUQM);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -16,10 +17,22 @@ public class TileBlueprint : ScriptableObject
     public float maxPheromoneStrength = 100f;
 
     public UQM tileType = UQM.DefaultTile;
-
+    public Dictionary<UQM, TileBase> TileBaseByUQM;
     [Header("Visual Assets")]
     public TileBase defaultTile;    // Visual for a default tile.
     public TileBase resourceTile;   // Visual for a tile with a resource.
     public TileBase queenTile;       // Visual for a tile with a Quin (hive).
     public TileBase blockerTile;       // Visual for a tile with a Quin (hive).
+
+    private void OnEnable()
+    {
+        TileBaseByUQM = new Dictionary<UQM, TileBase>
+        {
+            [UQM.DefaultTile] = defaultTile,
+            [UQM.Resource]    = resourceTile,
+            [UQM.Queen]       = queenTile,
+            [UQM.Blocker]     = blockerTile
+        };
+
+    }
 }

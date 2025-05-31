@@ -21,10 +21,10 @@ public class MapManager : MonoBehaviour
     [Header("References")] [SerializeField]
     private GameManager gM;
 
-    [SerializeField] private Tilemap tilemap;
+    [SerializeField] public Tilemap tilemap;
     
-    public Dictionary<Vector2Int, GameObject> MetaTilesTMP;
-    // private Vector3 tileSize;
+    public Dictionary<Vector2Int, GameObject> MetaTiles;
+    private Dictionary<UQM, TileBase> TileBaseByUQM;
 
     private void Awake()
     {
@@ -58,41 +58,42 @@ public class MapManager : MonoBehaviour
 
     private void OnTick(float tickDuration)
     {
-        TMPTIleUpdate();
+        // TMPTIleUpdate();
     }
 
-    private void TMPTIleUpdate()
-    {
-        foreach (var tilePair in MetaTilesTMP)
-        {
-            MetaTile metaTile = tilePair.Value.GetComponent<MetaTile>();
-            bool hasChanged = metaTile.CheckSelfForUpdate(); //TODO this is a tmp implementation until I implement UI
-            if (hasChanged)
-            {
-                TileBlueprint _currentTileData = Instantiate(tileTemplate);
-                TileBase tileToSet = _currentTileData.defaultTile;
-                if (metaTile.tileData.tileSpecialType == UQM.Queen)
-                {
-                    tileToSet = _currentTileData.queenTile;
-                }
-                else if (metaTile.tileData.tileSpecialType==UQM.Resource)
-                {
-                    tileToSet = _currentTileData.resourceTile;
-                }
-                else if (metaTile.tileData.tileSpecialType==UQM.Blocker)
-                {
-                    tileToSet = _currentTileData.blockerTile;
-                }
-                Vector3Int cellPos = new Vector3Int(metaTile.tileData.tilePosition[0], metaTile.tileData.tilePosition[1], 0);
-                
-                tilemap.SetTile(cellPos, tileToSet);
-            }
-        }
-    }
+    // private void TMPTIleUpdate()
+    // {
+    //     foreach (var tilePair in MetaTilesTMP)
+    //     {
+    //         MetaTile metaTile = tilePair.Value.GetComponent<MetaTile>();
+    //         bool hasChanged = metaTile.CheckSelfForUpdate(); //TODO this is a tmp implementation until I implement UI
+    //         if (hasChanged)
+    //         {
+    //             TileBlueprint _currentTileData = Instantiate(tileTemplate);
+    //             TileBase tileToSet = _currentTileData.defaultTile;
+    //             if (metaTile.tileData.tileSpecialType == UQM.Queen)
+    //             {
+    //                 tileToSet = _currentTileData.queenTile;
+    //             }
+    //             else if (metaTile.tileData.tileSpecialType==UQM.Resource)
+    //             {
+    //                 tileToSet = _currentTileData.resourceTile;
+    //             }
+    //             else if (metaTile.tileData.tileSpecialType==UQM.Blocker)
+    //             {
+    //                 tileToSet = _currentTileData.blockerTile;
+    //             }
+    //             Vector3Int cellPos = new Vector3Int(metaTile.tileData.tilePosition[0], metaTile.tileData.tilePosition[1], 0);
+    //             
+    //             tilemap.SetTile(cellPos, tileToSet);
+    //         }
+    //     }
+    // }
     private void CreateMetaTileGrid()
     {
         Dictionary<Vector2Int, TileBlueprint> _tileDatas = new Dictionary<Vector2Int, TileBlueprint>();
         Dictionary<Vector2Int, GameObject> _metaTiles = new Dictionary<Vector2Int, GameObject>();
+        TileBaseByUQM = tileTemplate.TileBaseByUQM;
         for (int x = 0; x < gridWidth; x++)
         {
             for (int y = 0; y < gridHeight; y++)
@@ -205,9 +206,9 @@ public class MapManager : MonoBehaviour
         foreach (var metaTile in _metaTiles)
         {
             Vector2Int key = metaTile.Key;
-            metaTile.Value.GetComponent<MetaTile>().Initialize(_tileDatas[key]);
+            metaTile.Value.GetComponent<MetaTile>().Initialize(_tileDatas[key],this);
         }
-        MetaTilesTMP = _metaTiles;
+        MetaTiles = _metaTiles;
      //TODO replace with UI system current is workaround solution   
     }
 
@@ -222,5 +223,11 @@ public class MapManager : MonoBehaviour
             metaTile.Value.GetComponent<Transform>().position = worldPos;
 
         }
+    }
+
+    public void UpdateTile(Vector3 tilePosition, UQM newTileUqm)
+    {
+        Vector3Int cellPos = tilemap.WorldToCell(tilePosition);
+        tilemap.SetTile(cellPos, TileBaseByUQM[newTileUqm]);
     }
 }
