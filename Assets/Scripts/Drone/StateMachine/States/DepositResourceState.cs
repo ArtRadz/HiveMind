@@ -11,6 +11,7 @@ public class DepositResourceState : DroneState
     }
     public override void Enter()
     {
+        drone.ChangeSpriteColor(Color.white);
         placeHolderCounter = 3;
     }
 

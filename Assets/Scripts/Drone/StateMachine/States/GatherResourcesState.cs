@@ -12,6 +12,7 @@ public class GatherResourcesState : DroneState
     }
     public override void Enter()
     {
+        drone.ChangeSpriteColor(Color.black);
         placeHolderCounter = 3;
     }
 

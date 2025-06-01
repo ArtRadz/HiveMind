@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public UnityEvent<float> onTick;
     [SerializeField] private float tickTimeStep = 1f;
+
+    [SerializeField]
+    private TextMeshProUGUI SpeedIndecator;
 
     void Start()
     {
@@ -40,19 +44,24 @@ public class GameManager : MonoBehaviour
         switch (keyNumber)
         {
             case 1:
-                tickTimeStep = 1f;    // 1 s per tick
+                tickTimeStep = 1f; // 1 s per tick
+                SpeedIndecator.text = "1";
                 break;
             case 2:
                 tickTimeStep = 0.8f;  // 0.8 s per tick
+                SpeedIndecator.text = "2";
                 break;
             case 3:
                 tickTimeStep = 0.5f;  // 0.5 s per tick
+                SpeedIndecator.text = "3";
                 break;
             case 4:
                 tickTimeStep = 0.25f; // 0.25 s per tick
+                SpeedIndecator.text = "4";
                 break;
             case 5:
                 tickTimeStep = 0.1f; // 0.1 s per tick
+                SpeedIndecator.text = "5";
                 break;
         }
     }

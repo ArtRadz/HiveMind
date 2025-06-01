@@ -9,6 +9,7 @@ public class DroneBase : MonoBehaviour
     public DroneData droneData;
 
     private float remainingTickDuration;
+    [SerializeField] private SpriteRenderer SR;
 
     public void InitDrone(MetaTile _currentTile)
     {
@@ -62,23 +63,10 @@ public class DroneBase : MonoBehaviour
 
     public void MoveDrone()
     {
-        // transform.position = droneData.nextTile.GetTileTransform().position;
-        StartCoroutine(SmoothMove(transform.position, droneData.nextTile.GetTileTransform().position, remainingTickDuration));
-        // Vector3 start = transform.position;
-        // Vector3 end = droneData.nextTile.GetTileTransform().position;
-        //
-        // int steps = 999; // Number of visual steps, higher = smoother
-        // float stepSize = 1f / steps;
-        //
-        // for (int i = 1; i <= steps; i++)
-        // {
-        //     float t = i * stepSize;
-        //     transform.position = Vector3.Lerp(start, end, t);
-        // }
-        //
-        // // Final snap to ensure no rounding errors
-        // transform.position = end;
+        StartCoroutine(SmoothMove(transform.position, droneData.nextTile.GetTileTransform().position,
+            remainingTickDuration));
     }
+
     private IEnumerator SmoothMove(Vector3 start, Vector3 end, float duration)
     {
         float elapsed = 0f;
@@ -91,7 +79,10 @@ public class DroneBase : MonoBehaviour
 
         transform.position = end;
 
-        // Clear coroutine reference when done
-        // currentMoveCoroutine = null;
     }
+    public void ChangeSpriteColor(Color colorToSet)
+    {
+        SR.color = colorToSet;
+    }
+
 }

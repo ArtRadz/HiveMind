@@ -66,6 +66,7 @@ MonoBehaviour:
       maxPheromoneStrength: 100
     PheromonMarkStrength: 50
     Strength: 0
+  SR: {fileID: 319277458781347541}
 --- !u!1 &319277458781347539
 GameObject:
   m_ObjectHideFlags: 0
