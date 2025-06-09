@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "com.artradz.observerutils": {
+    "com.artradz.observerutil": {
       "version": "https://github.com/ArtRadz/FieldObserver.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "621c6e18ba52af4158ae2d22e5d0884044c89997"
+      "hash": "33e25410e8100faac054180a18fd02b6f3d3d1d4"
     },
     "com.unity.2d.animation": {
       "version": "7.0.2",

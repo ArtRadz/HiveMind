@@ -64,8 +64,8 @@ MonoBehaviour:
       pheromones: []
       PheromonalDecayValuePerTick: 0
       maxPheromoneStrength: 100
-    PheromonMarkStrength: 50
-    Strength: 0
+    pheromoneMarkStrength: 50
+    strength: 0
   SR: {fileID: 319277458781347541}
 --- !u!1 &319277458781347539
 GameObject:

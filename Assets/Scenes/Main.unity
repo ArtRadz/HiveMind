@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: SpeedIndecator
       value: 
       objectReference: {fileID: 1025049479}
+    - target: {fileID: 3454732512156340702, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}
+      propertyPath: speedIndicator
+      value: 
+      objectReference: {fileID: 1025049479}
     - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}
       propertyPath: m_RootOrder
       value: 2

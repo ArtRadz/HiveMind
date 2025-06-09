@@ -1,34 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DepositResourceState : DroneState
 {
-    private int placeHolderCounter ;
+    private int placeholderCounter;
+
     public DepositResourceState(DroneBase drone) : base(drone)
     {
-        
     }
+
     public override void Enter()
     {
         drone.ChangeSpriteColor(Color.white);
-        placeHolderCounter = 3;
+        placeholderCounter = 3;
     }
 
     public override void Execute()
     {
-        placeHolderCounter--;
-        if (placeHolderCounter <= 0)
+        placeholderCounter--;
+
+        if (placeholderCounter <= 0)
         {
-            drone.droneData.PheromoneCounterToTarget = (UniversalQualifierMarker.Resource , null);
-            drone.droneData.PheromoneCounterToOrigin = (UniversalQualifierMarker.Queen,0);
+            drone.droneData.PheromoneCounterToTarget = (UniversalQualifierMarker.Resource, null);
+            drone.droneData.PheromoneCounterToOrigin = (UniversalQualifierMarker.Queen, 0);
             drone.ChangeState(new SearchState(drone));
-            return;
         }
     }
 
     public override void Exit()
     {
-        
     }
 }

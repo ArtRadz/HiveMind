@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UQM = UniversalQualifierMarker;
 
@@ -19,6 +17,7 @@ public static class EvaluationStrategyManager
                 return pher.Distance;
             }
         }
+
         return null;
     }
 }

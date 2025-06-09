@@ -5,229 +5,175 @@ using UQM = UniversalQualifierMarker;
 
 public class MapManager : MonoBehaviour
 {
-    [Header("Grid Settings")] [SerializeField]
-    private int gridWidth = 10;
+	[Header("Grid Settings")]
+	[SerializeField] private int gridWidth = 10;
+	[SerializeField] private int gridHeight = 10;
+	public float HexRadius { get; private set; }
+	public Vector3 BoardOrigin { get; private set; }
 
-    [SerializeField] private int gridHeight = 10;
-    public float  HexRadius  { get; private set; }
-    public Vector3 BoardOrigin { get; private set; }
+	[Header("Tile Template")]
+	[SerializeField] private TileBlueprint tileTemplate;
 
-    [Header("Tile Template")] [SerializeField]
-    private TileBlueprint tileTemplate;
+	[Header("Tile Prefab")]
+	[SerializeField] private GameObject metaTilePrefab;
 
-    [Header("Tile Prefab")] [SerializeField]
-    private GameObject metaTilePrefab;
+	[Header("References")]
+	[SerializeField] private GameManager gM;
+	[SerializeField] public Tilemap tilemap;
 
-    [Header("References")] [SerializeField]
-    private GameManager gM;
+	public Dictionary<Vector2Int, GameObject> MetaTiles;
+	private Dictionary<UQM, TileBase> TileBaseByUQM;
 
-    [SerializeField] public Tilemap tilemap;
-    
-    public Dictionary<Vector2Int, GameObject> MetaTiles;
-    private Dictionary<UQM, TileBase> TileBaseByUQM;
+	private void Awake()
+	{
+		CreateMetaTileGrid();
+	}
 
-    private void Awake()
-    {
-        
-        CreateMetaTileGrid();
-    }
+	private void Start()
+	{
+		if (gM == null)
+		{
+			gM = FindObjectOfType<GameManager>();
+		}
+	}
 
-    private void Start()
-    {
-        if (gM == null)
-        {
-            gM = FindObjectOfType<GameManager>();
-        }
-    }
+	private void OnEnable()
+	{
+		if (gM != null)
+		{
+			gM.onTick.AddListener(OnTick);
+		}
+	}
 
-    private void OnEnable()
-    {
-        if (gM != null)
-        {
-            gM.onTick.AddListener(OnTick);
-        }
-    }
+	private void OnDisable()
+	{
+		if (gM != null)
+		{
+			gM.onTick.RemoveListener(OnTick);
+		}
+	}
 
-    private void OnDisable()
-    {
-        if (gM != null)
-        {
-            gM.onTick.RemoveListener(OnTick);
-        }
-    }
+	private void OnTick(float tickDuration)
+	{
+		// Hook reserved for future functionality
+	}
 
-    private void OnTick(float tickDuration)
-    {
-        // TMPTIleUpdate();
-    }
+	private void CreateMetaTileGrid()
+	{
+		Dictionary<Vector2Int, TileBlueprint> tileDatas = new();
+		Dictionary<Vector2Int, GameObject> metaTiles = new();
+		TileBaseByUQM = tileTemplate.TileBaseByUQM;
 
-    // private void TMPTIleUpdate()
-    // {
-    //     foreach (var tilePair in MetaTilesTMP)
-    //     {
-    //         MetaTile metaTile = tilePair.Value.GetComponent<MetaTile>();
-    //         bool hasChanged = metaTile.CheckSelfForUpdate(); //TODO this is a tmp implementation until I implement UI
-    //         if (hasChanged)
-    //         {
-    //             TileBlueprint _currentTileData = Instantiate(tileTemplate);
-    //             TileBase tileToSet = _currentTileData.defaultTile;
-    //             if (metaTile.tileData.tileSpecialType == UQM.Queen)
-    //             {
-    //                 tileToSet = _currentTileData.queenTile;
-    //             }
-    //             else if (metaTile.tileData.tileSpecialType==UQM.Resource)
-    //             {
-    //                 tileToSet = _currentTileData.resourceTile;
-    //             }
-    //             else if (metaTile.tileData.tileSpecialType==UQM.Blocker)
-    //             {
-    //                 tileToSet = _currentTileData.blockerTile;
-    //             }
-    //             Vector3Int cellPos = new Vector3Int(metaTile.tileData.tilePosition[0], metaTile.tileData.tilePosition[1], 0);
-    //             
-    //             tilemap.SetTile(cellPos, tileToSet);
-    //         }
-    //     }
-    // }
-    private void CreateMetaTileGrid()
-    {
-        Dictionary<Vector2Int, TileBlueprint> _tileDatas = new Dictionary<Vector2Int, TileBlueprint>();
-        Dictionary<Vector2Int, GameObject> _metaTiles = new Dictionary<Vector2Int, GameObject>();
-        TileBaseByUQM = tileTemplate.TileBaseByUQM;
-        for (int x = 0; x < gridWidth; x++)
-        {
-            for (int y = 0; y < gridHeight; y++)
-            {
-                Vector2Int currentKey = new Vector2Int(x, y);
-                TileBlueprint _currentTileData;
-                _currentTileData = Instantiate(tileTemplate);
-                _currentTileData.tilePosition[0] = x;
-                _currentTileData.tilePosition[1] = y;
-                GameObject _currentMetaTile = Instantiate(metaTilePrefab, new Vector3(0, 0, 0), Quaternion.identity);
-                _tileDatas.Add(currentKey, _currentTileData);
-                _metaTiles.Add(currentKey, _currentMetaTile);
-            }
-        }
+		for (int x = 0; x < gridWidth; x++)
+		{
+			for (int y = 0; y < gridHeight; y++)
+			{
+				Vector2Int key = new(x, y);
+				TileBlueprint tileData = Instantiate(tileTemplate);
+				tileData.tilePosition[0] = x;
+				tileData.tilePosition[1] = y;
 
-        SetTileDataNeighbors(_tileDatas, _metaTiles);
-        PopulateTileMap(_tileDatas);
-        SetMetaTileData(_tileDatas,_metaTiles);
-        PositionMetaTilesOnTilemap(_metaTiles);
-    }
+				GameObject metaTile = Instantiate(metaTilePrefab, Vector3.zero, Quaternion.identity);
+				tileDatas.Add(key, tileData);
+				metaTiles.Add(key, metaTile);
+			}
+		}
 
-    private void SetTileDataNeighbors(Dictionary<Vector2Int, TileBlueprint> _tileDatas,
-        Dictionary<Vector2Int, GameObject> _metaTiles)
-    {
-        foreach (var _tileData in _tileDatas)
-        {
-            Vector2Int _position = _tileData.Key;
-            MetaTile[] _neighborArray = new MetaTile[6];
-            int positionX = _position.x;
-            int positionY = _position.y;
+		SetTileDataNeighbors(tileDatas, metaTiles);
+		PopulateTileMap(tileDatas);
+		SetMetaTileData(tileDatas, metaTiles);
+		PositionMetaTilesOnTilemap(metaTiles);
+	}
 
+	private void SetTileDataNeighbors(Dictionary<Vector2Int, TileBlueprint> tileDatas, Dictionary<Vector2Int, GameObject> metaTiles)
+	{
+		// Assigns neighboring MetaTiles to each TileBlueprint in the grid.
+		// This implementation assumes a flat-top hexagonal layout, where vertical alignment alternates
+		// between even and odd rows (offset layout).
+		// 
+		// Even rows shift neighbor lookup positions slightly left,
+		// while odd rows shift them slightly right to account for the staggered hex structure.
+		// The neighbor positions are computed accordingly for each row parity.
 
-            Vector2Int[] _neighborKeys;
+		foreach (var pair in tileDatas)
+		{
+			Vector2Int pos = pair.Key;
+			MetaTile[] neighbors = new MetaTile[6];
 
-            if (positionY % 2 == 0)
-            {
-                _neighborKeys = new Vector2Int[]
-                {
-                    new Vector2Int(positionX + 1, positionY),
-                    new Vector2Int(positionX, positionY + 1),
-                    new Vector2Int(positionX - 1, positionY + 1),
-                    new Vector2Int(positionX - 1, positionY),
-                    new Vector2Int(positionX - 1, positionY - 1),
-                    new Vector2Int(positionX, positionY - 1)
-                };
-            }
-            else
-            {
-                _neighborKeys = new Vector2Int[]
-                {
-                    new Vector2Int(positionX + 1, positionY),
-                    new Vector2Int(positionX + 1, positionY + 1),
-                    new Vector2Int(positionX, positionY + 1),
-                    new Vector2Int(positionX - 1, positionY),
-                    new Vector2Int(positionX, positionY - 1),
-                    new Vector2Int(positionX + 1, positionY - 1)
-                };
-            }
+			Vector2Int[] neighborKeys = (pos.y % 2 == 0)
+				? new[]
+				{
+					new Vector2Int(pos.x + 1, pos.y),
+					new Vector2Int(pos.x, pos.y + 1),
+					new Vector2Int(pos.x - 1, pos.y + 1),
+					new Vector2Int(pos.x - 1, pos.y),
+					new Vector2Int(pos.x - 1, pos.y - 1),
+					new Vector2Int(pos.x, pos.y - 1)
+				}
+				: new[]
+				{
+					new Vector2Int(pos.x + 1, pos.y),
+					new Vector2Int(pos.x + 1, pos.y + 1),
+					new Vector2Int(pos.x, pos.y + 1),
+					new Vector2Int(pos.x - 1, pos.y),
+					new Vector2Int(pos.x, pos.y - 1),
+					new Vector2Int(pos.x + 1, pos.y - 1)
+				};
 
-            int i = 0;
-            foreach (var key in _neighborKeys)
-            {
-                if (_metaTiles.ContainsKey(key))
-                {
-                    GameObject _currentNeighbour = _metaTiles[key];
-                    _neighborArray[i] = _currentNeighbour.GetComponent<MetaTile>();
-                }
-                else
-                {
-                    _neighborArray[i] = null;
-                }
+			for (int i = 0; i < 6; i++)
+			{
+				metaTiles.TryGetValue(neighborKeys[i], out GameObject neighborGO);
+				neighbors[i] = neighborGO ? neighborGO.GetComponent<MetaTile>() : null;
+			}
 
-                i++;
-            }
+			tileDatas[pos].neighborTiles = neighbors;
+		}
+	}
 
-            _tileDatas[_position].neighborTiles = _neighborArray;
-        }
-    }
+	private void PopulateTileMap(Dictionary<Vector2Int, TileBlueprint> tileDatas)
+	{
+		Tile sampleTile = tileDatas[new Vector2Int(0, 0)].defaultTile as Tile;
+		Vector3 tileSize = sampleTile.sprite.bounds.size;
 
-    private void PopulateTileMap(Dictionary<Vector2Int, TileBlueprint> _tileDatas)
-    {
-        // --- sample tile to derive scale -----------------------------
-        Tile sampleTile = _tileDatas[new Vector2Int(0, 0)].defaultTile as Tile;
-        Vector3 tileSize = sampleTile.sprite.bounds.size;      // already a Vector3
+		HexRadius = tileSize.y * 0.5f;
+		BoardOrigin = tilemap.GetCellCenterWorld(Vector3Int.zero);
+		tilemap.layoutGrid.cellSize = tileSize;
 
-        HexRadius   = tileSize.y * 0.5f;                       // flat-top rule r = H / 2
-        BoardOrigin = tilemap.GetCellCenterWorld(Vector3Int.zero);
+		for (int x = 0; x < gridWidth; x++)
+		{
+			for (int y = 0; y < gridHeight; y++)
+			{
+				Vector3Int cellPos = new(x, y, 0);
+				Vector2Int key = new(x, y);
 
-        tilemap.layoutGrid.cellSize = tileSize;                // set once
+				tilemap.SetTile(cellPos, tileDatas[key].defaultTile);
+			}
+		}
+	}
 
-        // --- paint the visual grid -----------------------------------
-        for (int x = 0; x < gridWidth; x++)
-        {
-            for (int y = 0; y < gridHeight; y++)
-            {
-                Vector3Int cellPos = new Vector3Int(x, y, 0);
-                Vector2Int key     = new Vector2Int(x, y);
+	private void SetMetaTileData(Dictionary<Vector2Int, TileBlueprint> tileDatas, Dictionary<Vector2Int, GameObject> metaTiles)
+	{
+		foreach (var pair in metaTiles)
+		{
+			pair.Value.GetComponent<MetaTile>().Initialize(tileDatas[pair.Key], this);
+		}
 
-                tilemap.SetTile(cellPos, _tileDatas[key].defaultTile);
+		MetaTiles = metaTiles;
+	}
 
-                // OPTIONAL: keep if each blueprint truly needs its own copy
-                // _tileDatas[key].tileSize = tileSize;
-            }
-        }
-    }
+	private void PositionMetaTilesOnTilemap(Dictionary<Vector2Int, GameObject> metaTiles)
+	{
+		foreach (var pair in metaTiles)
+		{
+			var data = pair.Value.GetComponent<MetaTile>().tileData;
+			Vector3 worldPos = tilemap.CellToWorld(new Vector3Int(data.tilePosition[0], data.tilePosition[1], 0));
+			pair.Value.transform.position = worldPos;
+		}
+	}
 
-
-    private void SetMetaTileData( Dictionary<Vector2Int,TileBlueprint> _tileDatas, Dictionary<Vector2Int,GameObject> _metaTiles)
-    {
-        foreach (var metaTile in _metaTiles)
-        {
-            Vector2Int key = metaTile.Key;
-            metaTile.Value.GetComponent<MetaTile>().Initialize(_tileDatas[key],this);
-        }
-        MetaTiles = _metaTiles;
-     //TODO replace with UI system current is workaround solution   
-    }
-
-    private void PositionMetaTilesOnTilemap(Dictionary<Vector2Int, GameObject> _metaTiles)
-    {
-        foreach (var metaTile in _metaTiles)
-        {
-            var tileInfo = metaTile.Value.GetComponent<MetaTile>().tileData;
-            int x = tileInfo.tilePosition[0];
-            int y = tileInfo.tilePosition[1];
-            Vector3 worldPos = tilemap.CellToWorld(new Vector3Int(x, y, 0));
-            metaTile.Value.GetComponent<Transform>().position = worldPos;
-
-        }
-    }
-
-    public void UpdateTile(Vector3 tilePosition, UQM newTileUqm)
-    {
-        Vector3Int cellPos = tilemap.WorldToCell(tilePosition);
-        tilemap.SetTile(cellPos, TileBaseByUQM[newTileUqm]);
-    }
+	public void UpdateTile(Vector3 tilePosition, UQM newTileUqm)
+	{
+		Vector3Int cellPos = tilemap.WorldToCell(tilePosition);
+		tilemap.SetTile(cellPos, TileBaseByUQM[newTileUqm]);
+	}
 }

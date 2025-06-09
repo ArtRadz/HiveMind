@@ -6,22 +6,22 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public UnityEvent<float> onTick;
+
     [SerializeField] private float tickTimeStep = 1f;
+    [SerializeField] private TextMeshProUGUI speedIndicator;
 
-    [SerializeField]
-    private TextMeshProUGUI SpeedIndecator;
-
-    void Start()
+    private void Start()
     {
         if (onTick == null)
+        {
             onTick = new UnityEvent<float>();
+        }
 
         StartCoroutine(FireTimeStepEvent());
     }
 
-    void Update()
+    private void Update()
     {
-        // Detect keys 1–4 and set speed accordingly
         if (Input.GetKeyDown(KeyCode.Alpha1)) SetSpeedByKey(1);
         if (Input.GetKeyDown(KeyCode.Alpha2)) SetSpeedByKey(2);
         if (Input.GetKeyDown(KeyCode.Alpha3)) SetSpeedByKey(3);
@@ -38,30 +38,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Map key number → new tickTimeStep value
     private void SetSpeedByKey(int keyNumber)
     {
         switch (keyNumber)
         {
             case 1:
-                tickTimeStep = 1f; // 1 s per tick
-                SpeedIndecator.text = "1";
+                tickTimeStep = 1f;
+                speedIndicator.text = "1";
                 break;
             case 2:
-                tickTimeStep = 0.8f;  // 0.8 s per tick
-                SpeedIndecator.text = "2";
+                tickTimeStep = 0.8f;
+                speedIndicator.text = "2";
                 break;
             case 3:
-                tickTimeStep = 0.5f;  // 0.5 s per tick
-                SpeedIndecator.text = "3";
+                tickTimeStep = 0.5f;
+                speedIndicator.text = "3";
                 break;
             case 4:
-                tickTimeStep = 0.25f; // 0.25 s per tick
-                SpeedIndecator.text = "4";
+                tickTimeStep = 0.25f;
+                speedIndicator.text = "4";
                 break;
             case 5:
-                tickTimeStep = 0.1f; // 0.1 s per tick
-                SpeedIndecator.text = "5";
+                tickTimeStep = 0.1f;
+                speedIndicator.text = "5";
                 break;
         }
     }

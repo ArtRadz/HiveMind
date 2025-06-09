@@ -8,57 +8,54 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private MapManager mapManager;
     [SerializeField] private TextMeshProUGUI selectionText;
 
-    private UQM[] _brushes;
-    private int _currentIndex;
+    private UQM[] brushes;
+    private int currentIndex;
 
-    void Start()
+    private void Start()
     {
-        // initialize brush list and UI
-        _brushes     = (UQM[])System.Enum.GetValues(typeof(UQM));
-        _currentIndex = 0;
+        brushes = (UQM[])System.Enum.GetValues(typeof(UQM));
+        currentIndex = 0;
         UpdateSelectionDisplay();
 
-        // fallback assignments
-        if (cam == null)       cam       = Camera.main;
+        if (cam == null) cam = Camera.main;
         if (mapManager == null) mapManager = FindObjectOfType<MapManager>();
     }
 
-    void Update()
+    private void Update()
     {
-        // right-click to cycle brush
         if (Input.GetMouseButtonDown(1))
+        {
             Cycle(1);
+        }
 
-        // left-click to paint
         if (Input.GetMouseButton(0))
         {
-            
             Vector3 mouse = Input.mousePosition;
-            mouse.z       = mapManager.BoardOrigin.z - cam.transform.position.z;
-            Vector3 world = cam.ScreenToWorldPoint(mouse);
+            mouse.z = mapManager.BoardOrigin.z - cam.transform.position.z;
 
-            
+            Vector3 world = cam.ScreenToWorldPoint(mouse);
             Vector3Int cell = mapManager.tilemap.WorldToCell(world);
-            Vector2Int key  = new Vector2Int(cell.x, cell.y);
+            Vector2Int key = new Vector2Int(cell.x, cell.y);
 
             if (mapManager.MetaTiles.ContainsKey(key))
             {
-                var metaGO = mapManager.MetaTiles[key];
-                metaGO.GetComponent<MetaTile>()
-                    .TrySetSpecial(_brushes[_currentIndex]);
+                GameObject metaGO = mapManager.MetaTiles[key];
+                metaGO.GetComponent<MetaTile>().TrySetSpecial(brushes[currentIndex]);
             }
         }
     }
 
-    void Cycle(int dir)
+    private void Cycle(int dir)
     {
-        _currentIndex = (_currentIndex + dir + _brushes.Length) % _brushes.Length;
+        currentIndex = (currentIndex + dir + brushes.Length) % brushes.Length;
         UpdateSelectionDisplay();
     }
 
-    void UpdateSelectionDisplay()
+    private void UpdateSelectionDisplay()
     {
         if (selectionText != null)
-            selectionText.text = _brushes[_currentIndex].ToString();
+        {
+            selectionText.text = brushes[currentIndex].ToString();
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.artradz.observerutils": "https://github.com/ArtRadz/FieldObserver.git",
+ "com.artradz.observerutil": "https://github.com/ArtRadz/FieldObserver.git",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.7",

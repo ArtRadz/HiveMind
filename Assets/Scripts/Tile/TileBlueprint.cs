@@ -7,10 +7,10 @@ using UQM = UniversalQualifierMarker;
 [CreateAssetMenu(fileName = "TileData", menuName = "Tile/TileData", order = 1)]
 public class TileBlueprint : ScriptableObject
 {
-    [Header("Default Meta Values")] 
+    [Header("Default Meta Values")]
     public float PheromonalDecayValuePerTick;
-    public List<Pheromone> pheromones = new List<Pheromone>();
-    
+    public List<Pheromone> pheromones = new();
+
     public int[] tilePosition = new int[2];
     public MetaTile[] neighborTiles;
     public Vector3 tileSize;
@@ -18,11 +18,12 @@ public class TileBlueprint : ScriptableObject
 
     public UQM tileType = UQM.DefaultTile;
     public Dictionary<UQM, TileBase> TileBaseByUQM;
+
     [Header("Visual Assets")]
-    public TileBase defaultTile;    // Visual for a default tile.
-    public TileBase resourceTile;   // Visual for a tile with a resource.
-    public TileBase queenTile;       // Visual for a tile with a Quin (hive).
-    public TileBase blockerTile;       // Visual for a tile with a Quin (hive).
+    public TileBase defaultTile;
+    public TileBase resourceTile;
+    public TileBase queenTile;
+    public TileBase blockerTile;
 
     private void OnEnable()
     {
@@ -33,6 +34,5 @@ public class TileBlueprint : ScriptableObject
             [UQM.Queen]       = queenTile,
             [UQM.Blocker]     = blockerTile
         };
-
     }
 }
