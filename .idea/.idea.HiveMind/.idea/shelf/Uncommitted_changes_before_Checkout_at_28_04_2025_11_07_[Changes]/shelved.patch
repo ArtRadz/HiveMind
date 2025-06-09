@@ -1,0 +1,470 @@
+Index: Assets/Prefubs/ObjBaseDrone.prefab
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\r\n%TAG !u! tag:unity3d.com,2011:\r\n--- !u!1 &319277458489709613\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 319277458489709615}\r\n  - component: {fileID: 319277458489709612}\r\n  m_Layer: 0\r\n  m_Name: ObjBaseDrone\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &319277458489709615\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458489709613}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: -10.121712, y: 5.9464116, z: -0.2930738}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_ConstrainProportionsScale: 0\r\n  m_Children:\r\n  - {fileID: 319277458781347538}\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 0\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!114 &319277458489709612\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458489709613}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: c612afea3c8c08547806fed8c89c5f74, type: 3}\r\n  m_Name: \r\n  m_EditorClassIdentifier: \r\n  droneData:\r\n    currentTile: {fileID: 0}\r\n    nextTile: {fileID: 0}\r\n    currentTileData:\r\n      tileSpecialType: 0\r\n      neighborTiles: []\r\n      tilePosition: \r\n      tileSize: {x: 0, y: 0, z: 0}\r\n      pheromones: []\r\n      PheromonalDecayValuePerTick: 0\r\n      maxPheromoneStrength: 100\r\n    nextTileData:\r\n      tileSpecialType: 0\r\n      neighborTiles: []\r\n      tilePosition: \r\n      tileSize: {x: 0, y: 0, z: 0}\r\n      pheromones: []\r\n      PheromonalDecayValuePerTick: 0\r\n      maxPheromoneStrength: 100\r\n    PheromonMarkStrength: 50\r\n    Strength: 0\r\n    Target: 0\r\n    bestStepToTarget: 2147483647\r\n--- !u!1 &319277458781347539\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 319277458781347538}\r\n  - component: {fileID: 319277458781347541}\r\n  m_Layer: 0\r\n  m_Name: Hexagon Flat-Top\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &319277458781347538\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458781347539}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: 0, y: 0, z: 0}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_ConstrainProportionsScale: 0\r\n  m_Children: []\r\n  m_Father: {fileID: 319277458489709615}\r\n  m_RootOrder: 0\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!212 &319277458781347541\r\nSpriteRenderer:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458781347539}\r\n  m_Enabled: 1\r\n  m_CastShadows: 0\r\n  m_ReceiveShadows: 0\r\n  m_DynamicOccludee: 1\r\n  m_StaticShadowCaster: 0\r\n  m_MotionVectors: 1\r\n  m_LightProbeUsage: 1\r\n  m_ReflectionProbeUsage: 1\r\n  m_RayTracingMode: 0\r\n  m_RayTraceProcedural: 0\r\n  m_RenderingLayerMask: 1\r\n  m_RendererPriority: 0\r\n  m_Materials:\r\n  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}\r\n  m_StaticBatchInfo:\r\n    firstSubMesh: 0\r\n    subMeshCount: 0\r\n  m_StaticBatchRoot: {fileID: 0}\r\n  m_ProbeAnchor: {fileID: 0}\r\n  m_LightProbeVolumeOverride: {fileID: 0}\r\n  m_ScaleInLightmap: 1\r\n  m_ReceiveGI: 1\r\n  m_PreserveUVs: 0\r\n  m_IgnoreNormalsForChartDetection: 0\r\n  m_ImportantGI: 0\r\n  m_StitchLightmapSeams: 1\r\n  m_SelectedEditorRenderState: 0\r\n  m_MinimumChartSize: 4\r\n  m_AutoUVMaxDistance: 0.5\r\n  m_AutoUVMaxAngle: 89\r\n  m_LightmapParameters: {fileID: 0}\r\n  m_SortingLayerID: 0\r\n  m_SortingLayer: 0\r\n  m_SortingOrder: 0\r\n  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}\r\n  m_Color: {r: 1, g: 1, b: 1, a: 1}\r\n  m_FlipX: 0\r\n  m_FlipY: 0\r\n  m_DrawMode: 0\r\n  m_Size: {x: 1, y: 0.8828125}\r\n  m_AdaptiveModeThreshold: 0.5\r\n  m_SpriteTileMode: 0\r\n  m_WasSpriteAssigned: 1\r\n  m_MaskInteraction: 0\r\n  m_SpriteSortPoint: 0\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Prefubs/ObjBaseDrone.prefab b/Assets/Prefubs/ObjBaseDrone.prefab
+--- a/Assets/Prefubs/ObjBaseDrone.prefab	
++++ b/Assets/Prefubs/ObjBaseDrone.prefab	
+@@ -46,28 +46,8 @@
+   m_Name: 
+   m_EditorClassIdentifier: 
+   droneData:
+-    currentTile: {fileID: 0}
+-    nextTile: {fileID: 0}
+-    currentTileData:
+-      tileSpecialType: 0
+-      neighborTiles: []
+-      tilePosition: 
+-      tileSize: {x: 0, y: 0, z: 0}
+-      pheromones: []
+-      PheromonalDecayValuePerTick: 0
+-      maxPheromoneStrength: 100
+-    nextTileData:
+-      tileSpecialType: 0
+-      neighborTiles: []
+-      tilePosition: 
+-      tileSize: {x: 0, y: 0, z: 0}
+-      pheromones: []
+-      PheromonalDecayValuePerTick: 0
+-      maxPheromoneStrength: 100
+-    PheromonMarkStrength: 50
++    PheromonMarkStrength: 500
+     Strength: 0
+-    Target: 0
+-    bestStepToTarget: 2147483647
+ --- !u!1 &319277458781347539
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -93,8 +73,8 @@
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 319277458781347539}
+   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+-  m_LocalPosition: {x: 0, y: 0, z: 0}
+-  m_LocalScale: {x: 1, y: 1, z: 1}
++  m_LocalPosition: {x: -0.0034, y: -0.3232, z: 0}
++  m_LocalScale: {x: 0.26108253, y: 0.26767337, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children: []
+   m_Father: {fileID: 319277458489709615}
+Index: Assets/Scripts/Drone/DroneBase.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Collections.Generic;\r\nusing System.Linq;\r\nusing UnityEngine;\r\nusing UQM = UniversalQualifierMarker;\r\npublic class DroneBase : MonoBehaviour\r\n{\r\n    private DroneState currentState;\r\n\r\n    public DroneData droneData;\r\n\r\n    public void InitDrone(MetaTile _currentTile)\r\n    {\r\n        droneData.currentTile = _currentTile;\r\n        // droneData.Target = UQM.Resource;\r\n        droneData.PheromoneCounterToOrigin = (UQM.Queen, 0);\r\n        droneData.PheromoneCounterToTarget = (UQM.Resource, null);\r\n        currentState = new SearchState(this); //Todo currently first state is hardcoded refactor when relevant (probably when more than 1type of drones)\r\n        GameManager gm = FindObjectOfType<GameManager>();\r\n        gm.onTick.AddListener(OnTick);\r\n    }\r\n\r\n    private void OnTick()\r\n    {\r\n        \r\n        currentState.Execute();\r\n    }\r\n\r\n    public void ChangeState(DroneState newState)\r\n    {\r\n        currentState.Exit();\r\n        currentState = newState;\r\n        currentState.Enter();\r\n    }\r\n\r\n    public TileData GetTileData()\r\n    {\r\n        TileData currentTileData = droneData.currentTile.GetTileData();\r\n        return currentTileData;\r\n    }\r\n\r\n\r\n    public void LeavePheromoneMark()\r\n    {\r\n        droneData.currentTile.UpdatePheromone(droneData.PheromoneCounterToOrigin , droneData.PheromonMarkStrength);\r\n    }\r\n\r\n\r\n    public void MoveDrone()\r\n    {\r\n        transform.position = droneData.nextTile.GetTileTransform().position;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Scripts/Drone/DroneBase.cs b/Assets/Scripts/Drone/DroneBase.cs
+--- a/Assets/Scripts/Drone/DroneBase.cs	
++++ b/Assets/Scripts/Drone/DroneBase.cs	
+@@ -10,8 +10,8 @@
+ 
+     public void InitDrone(MetaTile _currentTile)
+     {
+-        droneData.currentTile = _currentTile;
+-        // droneData.Target = UQM.Resource;
++        int _directionTileIndex = Random.Range(0, 7);
++        droneData.currentTile = (_currentTile,_directionTileIndex);
+         droneData.PheromoneCounterToOrigin = (UQM.Queen, 0);
+         droneData.PheromoneCounterToTarget = (UQM.Resource, null);
+         currentState = new SearchState(this); //Todo currently first state is hardcoded refactor when relevant (probably when more than 1type of drones)
+@@ -34,19 +34,19 @@
+ 
+     public TileData GetTileData()
+     {
+-        TileData currentTileData = droneData.currentTile.GetTileData();
++        TileData currentTileData = droneData.currentTile.tile.GetTileData();
+         return currentTileData;
+     }
+ 
+ 
+     public void LeavePheromoneMark()
+     {
+-        droneData.currentTile.UpdatePheromone(droneData.PheromoneCounterToOrigin , droneData.PheromonMarkStrength);
++        droneData.currentTile.tile.UpdatePheromone(droneData.PheromoneCounterToOrigin , droneData.PheromonMarkStrength);
+     }
+ 
+ 
+     public void MoveDrone()
+     {
+-        transform.position = droneData.nextTile.GetTileTransform().position;
++        transform.position = droneData.nextTile.tile.GetTileTransform().position;
+     }
+ }
+\ No newline at end of file
+Index: Assets/Scripts/Drone/DroneData.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Collections;\r\nusing System.Collections.Generic;\r\nusing UnityEngine;\r\nusing UQM = UniversalQualifierMarker;\r\n[System.Serializable]\r\npublic class DroneData\r\n{\r\n    public MetaTile currentTile;\r\n    public MetaTile nextTile;\r\n    public TileData currentTileData;\r\n    public TileData nextTileData;\r\n    public float PheromonMarkStrength;\r\n    public float Strength;\r\n    // public UQM Target;\r\n\r\n    // public int bestStepToTarget = int.MaxValue;\r\n    // public UQM PheromoneOriginPoint;\r\n    public (UQM target ,int? distanceToTarget) PheromoneCounterToTarget;\r\n    public (UQM origin ,int? distanceToOrigin) PheromoneCounterToOrigin;\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Scripts/Drone/DroneData.cs b/Assets/Scripts/Drone/DroneData.cs
+--- a/Assets/Scripts/Drone/DroneData.cs	
++++ b/Assets/Scripts/Drone/DroneData.cs	
+@@ -5,10 +5,10 @@
+ [System.Serializable]
+ public class DroneData
+ {
+-    public MetaTile currentTile;
+-    public MetaTile nextTile;
+-    public TileData currentTileData;
+-    public TileData nextTileData;
++    public (MetaTile tile,int directionTileIndex) currentTile;
++    public (MetaTile tile,int directionTileIndex) nextTile;
++    // public TileData currentTileData;
++    // public TileData nextTileData;
+     public float PheromonMarkStrength;
+     public float Strength;
+     // public UQM Target;
+Index: Assets/Scenes/Main.unity
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\r\n%TAG !u! tag:unity3d.com,2011:\r\n--- !u!29 &1\r\nOcclusionCullingSettings:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_OcclusionBakeSettings:\r\n    smallestOccluder: 5\r\n    smallestHole: 0.25\r\n    backfaceThreshold: 100\r\n  m_SceneGUID: 00000000000000000000000000000000\r\n  m_OcclusionCullingData: {fileID: 0}\r\n--- !u!104 &2\r\nRenderSettings:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 9\r\n  m_Fog: 0\r\n  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}\r\n  m_FogMode: 3\r\n  m_FogDensity: 0.01\r\n  m_LinearFogStart: 0\r\n  m_LinearFogEnd: 300\r\n  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}\r\n  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}\r\n  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}\r\n  m_AmbientIntensity: 1\r\n  m_AmbientMode: 3\r\n  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}\r\n  m_SkyboxMaterial: {fileID: 0}\r\n  m_HaloStrength: 0.5\r\n  m_FlareStrength: 1\r\n  m_FlareFadeSpeed: 3\r\n  m_HaloTexture: {fileID: 0}\r\n  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}\r\n  m_DefaultReflectionMode: 0\r\n  m_DefaultReflectionResolution: 128\r\n  m_ReflectionBounces: 1\r\n  m_ReflectionIntensity: 1\r\n  m_CustomReflection: {fileID: 0}\r\n  m_Sun: {fileID: 0}\r\n  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}\r\n  m_UseRadianceAmbientProbe: 0\r\n--- !u!157 &3\r\nLightmapSettings:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 12\r\n  m_GIWorkflowMode: 1\r\n  m_GISettings:\r\n    serializedVersion: 2\r\n    m_BounceScale: 1\r\n    m_IndirectOutputScale: 1\r\n    m_AlbedoBoost: 1\r\n    m_EnvironmentLightingMode: 0\r\n    m_EnableBakedLightmaps: 0\r\n    m_EnableRealtimeLightmaps: 0\r\n  m_LightmapEditorSettings:\r\n    serializedVersion: 12\r\n    m_Resolution: 2\r\n    m_BakeResolution: 40\r\n    m_AtlasSize: 1024\r\n    m_AO: 0\r\n    m_AOMaxDistance: 1\r\n    m_CompAOExponent: 1\r\n    m_CompAOExponentDirect: 0\r\n    m_ExtractAmbientOcclusion: 0\r\n    m_Padding: 2\r\n    m_LightmapParameters: {fileID: 0}\r\n    m_LightmapsBakeMode: 1\r\n    m_TextureCompression: 1\r\n    m_FinalGather: 0\r\n    m_FinalGatherFiltering: 1\r\n    m_FinalGatherRayCount: 256\r\n    m_ReflectionCompression: 2\r\n    m_MixedBakeMode: 2\r\n    m_BakeBackend: 1\r\n    m_PVRSampling: 1\r\n    m_PVRDirectSampleCount: 32\r\n    m_PVRSampleCount: 512\r\n    m_PVRBounces: 2\r\n    m_PVREnvironmentSampleCount: 256\r\n    m_PVREnvironmentReferencePointCount: 2048\r\n    m_PVRFilteringMode: 1\r\n    m_PVRDenoiserTypeDirect: 1\r\n    m_PVRDenoiserTypeIndirect: 1\r\n    m_PVRDenoiserTypeAO: 1\r\n    m_PVRFilterTypeDirect: 0\r\n    m_PVRFilterTypeIndirect: 0\r\n    m_PVRFilterTypeAO: 0\r\n    m_PVREnvironmentMIS: 1\r\n    m_PVRCulling: 1\r\n    m_PVRFilteringGaussRadiusDirect: 1\r\n    m_PVRFilteringGaussRadiusIndirect: 5\r\n    m_PVRFilteringGaussRadiusAO: 2\r\n    m_PVRFilteringAtrousPositionSigmaDirect: 0.5\r\n    m_PVRFilteringAtrousPositionSigmaIndirect: 2\r\n    m_PVRFilteringAtrousPositionSigmaAO: 1\r\n    m_ExportTrainingData: 0\r\n    m_TrainingDataDestination: TrainingData\r\n    m_LightProbeSampleCountMultiplier: 4\r\n  m_LightingDataAsset: {fileID: 0}\r\n  m_LightingSettings: {fileID: 0}\r\n--- !u!196 &4\r\nNavMeshSettings:\r\n  serializedVersion: 2\r\n  m_ObjectHideFlags: 0\r\n  m_BuildSettings:\r\n    serializedVersion: 2\r\n    agentTypeID: 0\r\n    agentRadius: 0.5\r\n    agentHeight: 2\r\n    agentSlope: 45\r\n    agentClimb: 0.4\r\n    ledgeDropHeight: 0\r\n    maxJumpAcrossDistance: 0\r\n    minRegionArea: 2\r\n    manualCellSize: 0\r\n    cellSize: 0.16666667\r\n    manualTileSize: 0\r\n    tileSize: 256\r\n    accuratePlacement: 0\r\n    maxJobWorkers: 0\r\n    preserveTilesOutsideBounds: 0\r\n    debug:\r\n      m_Flags: 0\r\n  m_NavMeshData: {fileID: 0}\r\n--- !u!1001 &218364653\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 3454732512156340697, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_Name\r\n      value: GameManager\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340702, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: tickTimeStep\r\n      value: 0.07\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 2\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: -10.121712\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 5.9464116\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: -0.2930738\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n--- !u!1839735485 &256433140 stripped\r\nTilemap:\r\n  m_CorrespondingSourceObject: {fileID: 4670215456422013755, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n  m_PrefabInstance: {fileID: 569389648}\r\n  m_PrefabAsset: {fileID: 0}\r\n--- !u!114 &495881318 stripped\r\nMonoBehaviour:\r\n  m_CorrespondingSourceObject: {fileID: 3454732512156340702, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}\r\n  m_PrefabInstance: {fileID: 218364653}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: c53a67011fb588d438b190a219a9873d, type: 3}\r\n  m_Name: \r\n  m_EditorClassIdentifier: \r\n--- !u!1 &532950892\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 532950895}\r\n  - component: {fileID: 532950894}\r\n  - component: {fileID: 532950893}\r\n  m_Layer: 0\r\n  m_Name: Main Camera\r\n  m_TagString: MainCamera\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!81 &532950893\r\nAudioListener:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 532950892}\r\n  m_Enabled: 1\r\n--- !u!20 &532950894\r\nCamera:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 532950892}\r\n  m_Enabled: 1\r\n  serializedVersion: 2\r\n  m_ClearFlags: 1\r\n  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}\r\n  m_projectionMatrixMode: 1\r\n  m_GateFitMode: 2\r\n  m_FOVAxisMode: 0\r\n  m_SensorSize: {x: 36, y: 24}\r\n  m_LensShift: {x: 0, y: 0}\r\n  m_FocalLength: 50\r\n  m_NormalizedViewPortRect:\r\n    serializedVersion: 2\r\n    x: 0\r\n    y: 0\r\n    width: 1\r\n    height: 1\r\n  near clip plane: 0.3\r\n  far clip plane: 1000\r\n  field of view: 60\r\n  orthographic: 1\r\n  orthographic size: 5\r\n  m_Depth: -1\r\n  m_CullingMask:\r\n    serializedVersion: 2\r\n    m_Bits: 4294967295\r\n  m_RenderingPath: -1\r\n  m_TargetTexture: {fileID: 0}\r\n  m_TargetDisplay: 0\r\n  m_TargetEye: 3\r\n  m_HDR: 1\r\n  m_AllowMSAA: 1\r\n  m_AllowDynamicResolution: 0\r\n  m_ForceIntoRT: 0\r\n  m_OcclusionCulling: 1\r\n  m_StereoConvergence: 10\r\n  m_StereoSeparation: 0.022\r\n--- !u!4 &532950895\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 532950892}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: 0, y: 0, z: -10}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_ConstrainProportionsScale: 0\r\n  m_Children: []\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 0\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!1001 &569389648\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710508, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 4670215455579710510, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n      propertyPath: m_Name\r\n      value: Grid\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: b045db352ad418a45aff2d4b29c1e800, type: 3}\r\n--- !u!1001 &2061212499\r\nPrefabInstance:\r\n  m_ObjectHideFlags: 0\r\n  serializedVersion: 2\r\n  m_Modification:\r\n    m_TransformParent: {fileID: 0}\r\n    m_Modifications:\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_RootOrder\r\n      value: 3\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalPosition.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalPosition.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalPosition.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalRotation.w\r\n      value: 1\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalRotation.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalRotation.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalRotation.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.x\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.y\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203785, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_LocalEulerAnglesHint.z\r\n      value: 0\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: gM\r\n      value: \r\n      objectReference: {fileID: 495881318}\r\n    - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: tilemap\r\n      value: \r\n      objectReference: {fileID: 256433140}\r\n    - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: gridWidth\r\n      value: 30\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: gridHeight\r\n      value: 30\r\n      objectReference: {fileID: 0}\r\n    - target: {fileID: 6063915811036203786, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: metaTilePrefab\r\n      value: \r\n      objectReference: {fileID: 9174698289800893193, guid: 4f7a3c6da2cd9d346afcc265c2875044, type: 3}\r\n    - target: {fileID: 6063915811036203787, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n      propertyPath: m_Name\r\n      value: ObjMapManager\r\n      objectReference: {fileID: 0}\r\n    m_RemovedComponents: []\r\n  m_SourcePrefab: {fileID: 100100000, guid: 09007e81a0150544cb8bef16f1234ac8, type: 3}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Scenes/Main.unity b/Assets/Scenes/Main.unity
+--- a/Assets/Scenes/Main.unity	
++++ b/Assets/Scenes/Main.unity	
+@@ -136,7 +136,7 @@
+       objectReference: {fileID: 0}
+     - target: {fileID: 3454732512156340702, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}
+       propertyPath: tickTimeStep
+-      value: 0.07
++      value: 0.5
+       objectReference: {fileID: 0}
+     - target: {fileID: 3454732512156340703, guid: 9a662c8bb7301ad469376d2fcfde31a6, type: 3}
+       propertyPath: m_RootOrder
+@@ -211,6 +211,7 @@
+   - component: {fileID: 532950895}
+   - component: {fileID: 532950894}
+   - component: {fileID: 532950893}
++  - component: {fileID: 532950896}
+   m_Layer: 0
+   m_Name: Main Camera
+   m_TagString: MainCamera
+@@ -284,6 +285,22 @@
+   m_Father: {fileID: 0}
+   m_RootOrder: 0
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!114 &532950896
++MonoBehaviour:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 532950892}
++  m_Enabled: 1
++  m_EditorHideFlags: 0
++  m_Script: {fileID: 11500000, guid: a8103d7fcc93e1144a8bb5d352086385, type: 3}
++  m_Name: 
++  m_EditorClassIdentifier: 
++  moveSpeed: 5
++  zoomSpeed: 10
++  minZoom: 2
++  maxZoom: 70
+ --- !u!1001 &569389648
+ PrefabInstance:
+   m_ObjectHideFlags: 0
+Index: Assets/Scripts/Drone/DronePathFinding.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Collections.Generic;\r\nusing System.Linq;\r\nusing UnityEngine;\r\nusing UQM = UniversalQualifierMarker;\r\n\r\n\r\nstatic class DronePathFinding \r\n{\r\n   public static MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter)\r\n    {\r\n        MetaTile[] neighborTiles = currentTileData.neighborTiles;\r\n        List<MetaTile> validNeighbors = neighborTiles.Where(tile => tile != null).ToList();\r\n        foreach (var entry in validNeighbors)\r\n        {\r\n            if (EvaluationStrategyManager.DirectTargetCheck(entry.GetTileData(), currentTarget))\r\n            {\r\n                Debug.Log(\"DIRECT TARGET FOUND!!!!!!!!!!!!!!!!!!!!\");\r\n                return entry;\r\n            }\r\n        }\r\n\r\n        List<MetaTile> pheromoneCandidates = new List<MetaTile>();\r\n\r\n        int? bestValue = currentCounter;\r\n        foreach (var entry in validNeighbors)\r\n        {\r\n            int? phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);\r\n            if (phValue != null)\r\n            {\r\n                Debug.Log(\"PHValue is : \" + phValue + \" and best value is : \" + bestValue);\r\n                if (bestValue==null || phValue<bestValue)\r\n                {\r\n                    bestValue = phValue;\r\n                    pheromoneCandidates.Add(entry);\r\n                    \r\n                }\r\n            }\r\n        }\r\n\r\n        pheromoneCandidates = pheromoneCandidates\r\n            .Where(entry => EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget) == bestValue)\r\n            .ToList();\r\n\r\n        if (pheromoneCandidates.Count >0)\r\n        {\r\n            return ChooseRandomNeighbor(pheromoneCandidates);\r\n        }\r\n\r\n        return ChooseRandomNeighbor(validNeighbors);\r\n    }\r\n\r\n    private static MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)\r\n    {\r\n        // Debug.Log(\"I got here with those neighbours \" + neighbors)//;\r\n        return neighbors[Random.Range(0, neighbors.Count)];\r\n    }\r\n}
+===================================================================
+diff --git a/Assets/Scripts/Drone/DronePathFinding.cs b/Assets/Scripts/Drone/DronePathFinding.cs
+--- a/Assets/Scripts/Drone/DronePathFinding.cs	
++++ b/Assets/Scripts/Drone/DronePathFinding.cs	
+@@ -1,57 +1,129 @@
+ using System.Collections.Generic;
+-using System.Linq;
+ using UnityEngine;
+ using UQM = UniversalQualifierMarker;
+-
+-
+ static class DronePathFinding 
+ {
+-   public static MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter)
++    public static (MetaTile, int) ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter, int previousDirectionalIndex)
+     {
++        // Build list of valid neighbors (preserving their original indices).
+         MetaTile[] neighborTiles = currentTileData.neighborTiles;
+-        List<MetaTile> validNeighbors = neighborTiles.Where(tile => tile != null).ToList();
++        List<(int originalIndex, MetaTile tile)> validNeighbors = new List<(int, MetaTile)>();
++        for (int i = 0; i < neighborTiles.Length; i++)
++        {
++            if (neighborTiles[i] != null)
++            {
++                validNeighbors.Add((i, neighborTiles[i]));
++            }
++        }
++        //
++        // 1. Direct Target Check: If any neighbor directly qualifies, return it.
+         foreach (var entry in validNeighbors)
+         {
+-            if (EvaluationStrategyManager.DirectTargetCheck(entry.GetTileData(), currentTarget))
++            if (EvaluationStrategyManager.DirectTargetCheck(entry.tile.GetTileData(), currentTarget))
+             {
+                 Debug.Log("DIRECT TARGET FOUND!!!!!!!!!!!!!!!!!!!!");
+-                return entry;
++                return (entry.tile, entry.originalIndex);
+             }
+         }
+-
+-        List<MetaTile> pheromoneCandidates = new List<MetaTile>();
+-
+-        int? bestValue = currentCounter;
++        
++        // 2. Build candidate list based on pheromone values.
++        // We'll determine the best (lowest) pheromone value among neighbors.
++        int? bestValue = currentCounter; // currentCounter is a nullable int.
++        // We'll also collect candidates along with their original index and evaluated pheromone.
++        List<(int originalIndex, MetaTile tile, int? phValue)> candidateList = new List<(int, MetaTile, int?)>();
++        
+         foreach (var entry in validNeighbors)
+         {
+-            int? phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
++            int? phValue = EvaluationStrategyManager.EvaluatePheromone(entry.tile.GetTileData(), currentTarget);
+             if (phValue != null)
+             {
+-                Debug.Log("PHValue is : " + phValue + " and best value is : " + bestValue);
+-                if (bestValue==null || phValue<bestValue)
++                // Debug.Log("PHValue is : " + phValue + " and best value is : " + bestValue);
++                // If no bestValue is set or this neighbor's value is lower, update bestValue and reset candidate list.
++                if (bestValue == null || phValue < bestValue)
+                 {
+                     bestValue = phValue;
+-                    pheromoneCandidates.Add(entry);
+-                    
++                    candidateList.Clear();
++                    candidateList.Add((entry.originalIndex, entry.tile, phValue));
++                }
++                // If the neighbor's pheromone value equals the bestValue, add it as well.
++                else if (phValue == bestValue)
++                {
++                    candidateList.Add((entry.originalIndex, entry.tile, phValue));
+                 }
+             }
+         }
+-
+-        pheromoneCandidates = pheromoneCandidates
+-            .Where(entry => EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget) == bestValue)
+-            .ToList();
+-
+-        if (pheromoneCandidates.Count >0)
++        
++        // 3. If we have candidates, choose one randomly.
++        if (candidateList.Count > 0)
+         {
+-            return ChooseRandomNeighbor(pheromoneCandidates);
++            int randomIndex = Random.Range(0, candidateList.Count);
++            var candidate = candidateList[randomIndex];
++            return (candidate.tile, candidate.originalIndex);
+         }
+-
+-        return ChooseRandomNeighbor(validNeighbors);
++        
++        // 4. Fallback: Use weighted random selection among valid neighbors.
++        return     private static (MetaTile, int) ChooseRandomNeighbor(List<MetaTile> neighbors)
++        (validNeighbors, previousDirectionalIndex);
+     }
+ 
+-    private static MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)
++    private static (MetaTile, int) ChooseRandomNeighbor(List<MetaTile> neighbors)
+     {
+-        // Debug.Log("I got here with those neighbours " + neighbors)//;
+-        return neighbors[Random.Range(0, neighbors.Count)];
++        int index = Random.Range(0, neighbors.Count);
++        MetaTile tile = neighbors[index];
++        return (tile, index);  // Note: this index is relative to the filtered list.
+     }
+-}
+\ No newline at end of file
++
++    // private static (MetaTile, int) ChooseRandomNeighborWeighted(List<(int originalIndex, MetaTile tile)> neighbors, int previousOriginalIndex)
++    // {
++    //     int totalNeighbors = 6; // ideally, but note: boundaries might have fewer neighbors.
++    //     float totalWeight = 0f;
++    //     List<float> weights = new List<float>();
++    //
++    //     foreach (var (origIndex, tile) in neighbors)
++    //     {
++    //         // Calculate the minimal circular difference
++    //         int directDiff = Mathf.Abs(origIndex - previousOriginalIndex);
++    //         int wrapDiff = totalNeighbors - directDiff;
++    //         int diff = Mathf.Min(directDiff, wrapDiff);
++    //     
++    //         // Map diff to weight
++    //         float weight;
++    //         switch(diff)
++    //         {
++    //             case 0:
++    //                 weight = 1.0f;  // Continue straight is best.
++    //                 break;
++    //             case 1:
++    //                 weight = 0.7f;  // Slight turn.
++    //                 break;
++    //             case 2:
++    //                 weight = 0.3f;  // Sharp turn.
++    //                 break;
++    //             case 3:
++    //                 weight = 0.1f;  // Reverse is almost impossible.
++    //                 break;
++    //             default:
++    //                 weight = 0.01f; // Fallback case; should not happen.
++    //                 break;
++    //         }
++    //     
++    //         weights.Add(weight);
++    //         totalWeight += weight;
++    //     }
++    //
++    //     // Now perform the weighted random selection.
++    //     float randomValue = Random.Range(0f, totalWeight);
++    //     for (int i = 0; i < neighbors.Count; i++)
++    //     {
++    //         randomValue -= weights[i];
++    //         if (randomValue <= 0f)
++    //         {
++    //             return (neighbors[i].tile, neighbors[i].originalIndex);
++    //         }
++    //     }
++    //
++    //     // Fallback return (shouldn't normally hit this).
++    //     return (neighbors[neighbors.Count - 1].tile, neighbors[neighbors.Count - 1].originalIndex);
++    // }
++
++}
+Index: Assets/Scripts/Drone/StateMachine/States/SearchState.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Collections;\r\nusing System.Collections.Generic;\r\nusing UnityEngine;\r\nusing UQM = UniversalQualifierMarker;\r\nusing static DronePathFinding;\r\nusing static CounterHandler;\r\n\r\npublic class SearchState : DroneState\r\n{\r\n\r\n    public SearchState(DroneBase drone) : base(drone)\r\n    {\r\n        \r\n    }\r\n\r\n    public override void Enter()\r\n    {\r\n        \r\n    }\r\n\r\n    public override void Execute()\r\n    {\r\n        DroneData droneData = drone.droneData;\r\n        TileData tileData = drone.GetTileData();\r\n        UpdateOriginCounter(droneData,tileData);\r\n        HandleTargetSearch(droneData, tileData);\r\n        UpdateTargetCounter(droneData, tileData);\r\n        drone.MoveDrone();\r\n        droneData.currentTile = droneData.nextTile;\r\n    }\r\n\r\n    private void UpdateTargetCounter(DroneData droneData, TileData tileData)\r\n    {\r\n        \r\n        droneData.PheromoneCounterToTarget = CounterHandler.UpdateCounters(tileData, droneData.PheromoneCounterToTarget);\r\n        \r\n    }\r\n    private void HandleTargetSearch(DroneData droneData, TileData tileData)\r\n    {\r\n        UQM target = droneData.PheromoneCounterToTarget.target;\r\n        int? stepsToTarget = droneData.PheromoneCounterToTarget.distanceToTarget;\r\n        UQM origin = droneData.PheromoneCounterToOrigin.origin;\r\n        if (tileData.tileSpecialType == droneData.PheromoneCounterToTarget.target)\r\n        {\r\n            DroneState nextState;\r\n            if (droneData.PheromoneCounterToTarget.target == UQM.Resource)\r\n            {\r\n                nextState = new GatherResourcesState(drone);\r\n            }\r\n            else\r\n            {\r\n                nextState = new DepositResourceState(drone);\r\n            }\r\n            droneData.PheromoneCounterToTarget.target = origin;\r\n            droneData.PheromoneCounterToOrigin.origin = target;\r\n            drone.ChangeState(nextState);\r\n            return;\r\n        }\r\n        droneData.nextTile = DronePathFinding.ChooseNextTile(tileData,target,stepsToTarget);\r\n        \r\n    }\r\n    \r\n    private void UpdateOriginCounter(DroneData droneData, TileData tileData)\r\n    {\r\n        int? currentDistance = droneData.PheromoneCounterToOrigin.distanceToOrigin;\r\n        droneData.PheromoneCounterToOrigin =\r\n            CounterHandler.UpdateCounters(tileData, droneData.PheromoneCounterToOrigin);\r\n        if (currentDistance < droneData.PheromoneCounterToOrigin.distanceToOrigin)\r\n        {\r\n            drone.LeavePheromoneMark();\r\n        }\r\n        else\r\n        {\r\n            droneData.PheromoneCounterToOrigin.distanceToOrigin = currentDistance;\r\n        }\r\n    }\r\n    \r\n    public override void Exit()\r\n    {\r\n        \r\n    }\r\n}
+===================================================================
+diff --git a/Assets/Scripts/Drone/StateMachine/States/SearchState.cs b/Assets/Scripts/Drone/StateMachine/States/SearchState.cs
+--- a/Assets/Scripts/Drone/StateMachine/States/SearchState.cs	
++++ b/Assets/Scripts/Drone/StateMachine/States/SearchState.cs	
+@@ -7,22 +7,19 @@
+ 
+ public class SearchState : DroneState
+ {
+-
+     public SearchState(DroneBase drone) : base(drone)
+     {
+-        
+     }
+ 
+     public override void Enter()
+     {
+-        
+     }
+ 
+     public override void Execute()
+     {
+         DroneData droneData = drone.droneData;
+         TileData tileData = drone.GetTileData();
+-        UpdateOriginCounter(droneData,tileData);
++        UpdateOriginCounter(droneData, tileData);
+         HandleTargetSearch(droneData, tileData);
+         UpdateTargetCounter(droneData, tileData);
+         drone.MoveDrone();
+@@ -31,10 +28,10 @@
+ 
+     private void UpdateTargetCounter(DroneData droneData, TileData tileData)
+     {
+-        
+-        droneData.PheromoneCounterToTarget = CounterHandler.UpdateCounters(tileData, droneData.PheromoneCounterToTarget);
+-        
+-    }
++        droneData.PheromoneCounterToTarget =
++            CounterHandler.UpdateCounters(tileData, droneData.PheromoneCounterToTarget);
++    }
++
+     private void HandleTargetSearch(DroneData droneData, TileData tileData)
+     {
+         UQM target = droneData.PheromoneCounterToTarget.target;
+@@ -51,15 +48,17 @@
+             {
+                 nextState = new DepositResourceState(drone);
+             }
++
+             droneData.PheromoneCounterToTarget.target = origin;
+             droneData.PheromoneCounterToOrigin.origin = target;
+             drone.ChangeState(nextState);
+             return;
+         }
+-        droneData.nextTile = DronePathFinding.ChooseNextTile(tileData,target,stepsToTarget);
+-        
++
++        droneData.nextTile = DronePathFinding.ChooseNextTile(tileData, target, stepsToTarget, droneData.currentTile.directionTileIndex);
++        ;
+     }
+-    
++
+     private void UpdateOriginCounter(DroneData droneData, TileData tileData)
+     {
+         int? currentDistance = droneData.PheromoneCounterToOrigin.distanceToOrigin;
+@@ -74,9 +73,8 @@
+             droneData.PheromoneCounterToOrigin.distanceToOrigin = currentDistance;
+         }
+     }
+-    
++
+     public override void Exit()
+     {
+-        
+     }
+ }
+\ No newline at end of file
+Index: Assets/Prefubs/ObjBaseDrone.prefab
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\r\n%TAG !u! tag:unity3d.com,2011:\r\n--- !u!1 &319277458489709613\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 319277458489709615}\r\n  - component: {fileID: 319277458489709612}\r\n  m_Layer: 0\r\n  m_Name: ObjBaseDrone\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &319277458489709615\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458489709613}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: -10.121712, y: 5.9464116, z: -0.2930738}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_ConstrainProportionsScale: 0\r\n  m_Children:\r\n  - {fileID: 319277458781347538}\r\n  m_Father: {fileID: 0}\r\n  m_RootOrder: 0\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!114 &319277458489709612\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458489709613}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: c612afea3c8c08547806fed8c89c5f74, type: 3}\r\n  m_Name: \r\n  m_EditorClassIdentifier: \r\n  droneData:\r\n    currentTile: {fileID: 0}\r\n    nextTile: {fileID: 0}\r\n    currentTileData:\r\n      tileSpecialType: 0\r\n      neighborTiles: []\r\n      tilePosition: \r\n      tileSize: {x: 0, y: 0, z: 0}\r\n      pheromones: []\r\n      PheromonalDecayValuePerTick: 0\r\n      maxPheromoneStrength: 100\r\n    nextTileData:\r\n      tileSpecialType: 0\r\n      neighborTiles: []\r\n      tilePosition: \r\n      tileSize: {x: 0, y: 0, z: 0}\r\n      pheromones: []\r\n      PheromonalDecayValuePerTick: 0\r\n      maxPheromoneStrength: 100\r\n    PheromonMarkStrength: 50\r\n    Strength: 0\r\n    Target: 0\r\n    bestStepToTarget: 2147483647\r\n--- !u!1 &319277458781347539\r\nGameObject:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  serializedVersion: 6\r\n  m_Component:\r\n  - component: {fileID: 319277458781347538}\r\n  - component: {fileID: 319277458781347541}\r\n  m_Layer: 0\r\n  m_Name: Hexagon Flat-Top\r\n  m_TagString: Untagged\r\n  m_Icon: {fileID: 0}\r\n  m_NavMeshLayer: 0\r\n  m_StaticEditorFlags: 0\r\n  m_IsActive: 1\r\n--- !u!4 &319277458781347538\r\nTransform:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458781347539}\r\n  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}\r\n  m_LocalPosition: {x: 0, y: 0, z: 0}\r\n  m_LocalScale: {x: 1, y: 1, z: 1}\r\n  m_ConstrainProportionsScale: 0\r\n  m_Children: []\r\n  m_Father: {fileID: 319277458489709615}\r\n  m_RootOrder: 0\r\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\r\n--- !u!212 &319277458781347541\r\nSpriteRenderer:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 319277458781347539}\r\n  m_Enabled: 1\r\n  m_CastShadows: 0\r\n  m_ReceiveShadows: 0\r\n  m_DynamicOccludee: 1\r\n  m_StaticShadowCaster: 0\r\n  m_MotionVectors: 1\r\n  m_LightProbeUsage: 1\r\n  m_ReflectionProbeUsage: 1\r\n  m_RayTracingMode: 0\r\n  m_RayTraceProcedural: 0\r\n  m_RenderingLayerMask: 1\r\n  m_RendererPriority: 0\r\n  m_Materials:\r\n  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}\r\n  m_StaticBatchInfo:\r\n    firstSubMesh: 0\r\n    subMeshCount: 0\r\n  m_StaticBatchRoot: {fileID: 0}\r\n  m_ProbeAnchor: {fileID: 0}\r\n  m_LightProbeVolumeOverride: {fileID: 0}\r\n  m_ScaleInLightmap: 1\r\n  m_ReceiveGI: 1\r\n  m_PreserveUVs: 0\r\n  m_IgnoreNormalsForChartDetection: 0\r\n  m_ImportantGI: 0\r\n  m_StitchLightmapSeams: 1\r\n  m_SelectedEditorRenderState: 0\r\n  m_MinimumChartSize: 4\r\n  m_AutoUVMaxDistance: 0.5\r\n  m_AutoUVMaxAngle: 89\r\n  m_LightmapParameters: {fileID: 0}\r\n  m_SortingLayerID: 0\r\n  m_SortingLayer: 0\r\n  m_SortingOrder: 0\r\n  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}\r\n  m_Color: {r: 1, g: 1, b: 1, a: 1}\r\n  m_FlipX: 0\r\n  m_FlipY: 0\r\n  m_DrawMode: 0\r\n  m_Size: {x: 1, y: 0.8828125}\r\n  m_AdaptiveModeThreshold: 0.5\r\n  m_SpriteTileMode: 0\r\n  m_WasSpriteAssigned: 1\r\n  m_MaskInteraction: 0\r\n  m_SpriteSortPoint: 0\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Prefubs/ObjBaseDrone.prefab b/Assets/Prefubs/ObjBaseDrone.prefab
+--- a/Assets/Prefubs/ObjBaseDrone.prefab	
++++ b/Assets/Prefubs/ObjBaseDrone.prefab	
+@@ -46,28 +46,8 @@
+   m_Name: 
+   m_EditorClassIdentifier: 
+   droneData:
+-    currentTile: {fileID: 0}
+-    nextTile: {fileID: 0}
+-    currentTileData:
+-      tileSpecialType: 0
+-      neighborTiles: []
+-      tilePosition: 
+-      tileSize: {x: 0, y: 0, z: 0}
+-      pheromones: []
+-      PheromonalDecayValuePerTick: 0
+-      maxPheromoneStrength: 100
+-    nextTileData:
+-      tileSpecialType: 0
+-      neighborTiles: []
+-      tilePosition: 
+-      tileSize: {x: 0, y: 0, z: 0}
+-      pheromones: []
+-      PheromonalDecayValuePerTick: 0
+-      maxPheromoneStrength: 100
+-    PheromonMarkStrength: 50
++    PheromonMarkStrength: 500
+     Strength: 0
+-    Target: 0
+-    bestStepToTarget: 2147483647
+ --- !u!1 &319277458781347539
+ GameObject:
+   m_ObjectHideFlags: 0
+@@ -93,8 +73,8 @@
+   m_PrefabAsset: {fileID: 0}
+   m_GameObject: {fileID: 319277458781347539}
+   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+-  m_LocalPosition: {x: 0, y: 0, z: 0}
+-  m_LocalScale: {x: 1, y: 1, z: 1}
++  m_LocalPosition: {x: -0.0034, y: -0.3232, z: 0}
++  m_LocalScale: {x: 0.26108253, y: 0.26767337, z: 1}
+   m_ConstrainProportionsScale: 0
+   m_Children: []
+   m_Father: {fileID: 319277458489709615}

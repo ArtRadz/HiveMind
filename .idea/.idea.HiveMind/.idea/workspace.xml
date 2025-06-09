@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="664b81b6-220a-482b-9753-7b45504cf6ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/FieldObserver.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/CounterHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/CounterHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBlueprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBlueprint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/DepositResourceState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/DepositResourceState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/GatherResourcesState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/GatherResourcesState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/SearchState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/SearchState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Markers/UniversalQualifierMarkers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Markers/UniversalQualifierMarkers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pheramone/Pheromone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pheramone/Pheromone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile/MetaTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile/MetaTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile/TileBlueprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile/TileBlueprint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile/TileData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile/TileData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TilePainter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TilePainter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/HexGridUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/HexGridUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev_map" />
+      </map>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/SearchState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Markers/UniversalQualifierMarkers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TilePainter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/HexGridUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.artradz.observerutil@33e25410e8/Runtime/FieldObserver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/SpriteEditor/SpriteEditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridBrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintingState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/SceneViewOpenTilePaletteHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.6.0/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.6.0/Editor/BurstAotSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Utils/FieldObserver/Runtime/FieldObserver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad50157ee00e45cdb3c8bd67012f8804157200/f5/dc94568a/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b8222705424b4e7da3f40ce66289cbe09800/c9/2cdf2939/TileBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="2uLhuwfw9Sy1tuqWjxJ2yO5AdFn" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Radz\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Radz\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Radz\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Unity\2021.2.7f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Repo\HiveMind -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Repo\HiveMind" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Unity\2021.2.7f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Repo\HiveMind -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Repo\HiveMind" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="664b81b6-220a-482b-9753-7b45504cf6ef" name="Changes" comment="" />
+      <created>1742033991722</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742033991722</updated>
+      <workItem from="1742033993369" duration="1523000" />
+      <workItem from="1742042469680" duration="24005000" />
+      <workItem from="1742151697134" duration="17414000" />
+      <workItem from="1742332420338" duration="19198000" />
+      <workItem from="1742358740303" duration="14083000" />
+      <workItem from="1742681728078" duration="18215000" />
+      <workItem from="1742852196270" duration="3303000" />
+      <workItem from="1743362810949" duration="694000" />
+      <workItem from="1743953248652" duration="150000" />
+      <workItem from="1745827604772" duration="1883000" />
+      <workItem from="1747247237596" duration="623000" />
+      <workItem from="1747945175103" duration="7441000" />
+      <workItem from="1748037588378" duration="6764000" />
+      <workItem from="1748293203509" duration="8789000" />
+      <workItem from="1748314175486" duration="260000" />
+      <workItem from="1748381169700" duration="5411000" />
+      <workItem from="1748462670104" duration="4921000" />
+      <workItem from="1748551366991" duration="9692000" />
+      <workItem from="1748638397538" duration="8972000" />
+      <workItem from="1748722407642" duration="4755000" />
+      <workItem from="1748741649079" duration="52000" />
+      <workItem from="1748801371383" duration="1960000" />
+      <workItem from="1748990225036" duration="714000" />
+      <workItem from="1748991669925" duration="558000" />
+      <workItem from="1748992642241" duration="1528000" />
+      <workItem from="1748994844897" duration="1164000" />
+      <workItem from="1748996148871" duration="647000" />
+      <workItem from="1748998519752" duration="871000" />
+      <workItem from="1749246090675" duration="2925000" />
+      <workItem from="1749421337500" duration="40000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/dev_drone_rework" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs</url>
+          <line>103</line>
+          <properties documentPath="C:\Repo\HiveMind\Assets\Scripts\Managers\MapManager.cs" initialLine="170" containingFunctionPresentation="Method 'SetTileDataNeighbors'">
+            <startOffsets>
+              <option value="4207" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4208" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
