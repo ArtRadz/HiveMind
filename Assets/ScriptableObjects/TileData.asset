@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7b27a541c014a42b1d96bad39d1191, type: 3}
+  m_Name: TileData
+  m_EditorClassIdentifier: 
+  PheromonalDecayValuePerTick: 0.5
+  pheromones:
+  - Type: 0
+  - Type: 1
+  - Type: 2
+  - Type: 3
+  tilePosition: 0000000000000000
+  neighborTiles: []
+  tileSize: {x: 0, y: 0, z: 0}
+  maxPheromoneStrength: 100
+  tileType: 2
+  defaultTile: {fileID: 11400000, guid: d5a2bb791708cb849b7467487bf21d42, type: 2}
+  resourceTile: {fileID: 11400000, guid: 246ac561d53b38a45abcaccaf3d4f2f0, type: 2}
+  queenTile: {fileID: 11400000, guid: 2115c1f13a509b04198963efcc5e863d, type: 2}
+  blockerTile: {fileID: 11400000, guid: 1c1d4d4f7a423c54d8586a6d13408554, type: 2}
