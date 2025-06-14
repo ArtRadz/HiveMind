@@ -58,6 +58,7 @@ MonoBehaviour:
     - Type: 0
     - Type: 1
     - Type: 2
-    PheromonalDecayValuePerTick: 0
+    PheromonalDecayValuePerTick: 0.5
+    maxPheromoneStrength: 150
   queenPrefab: {fileID: 2345156230984066700, guid: c8b59725aefece04dbef2eec085a79ad, type: 3}
   tileGO: {fileID: 9174698289800893193}

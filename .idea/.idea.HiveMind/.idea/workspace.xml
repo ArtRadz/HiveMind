@@ -5,31 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="664b81b6-220a-482b-9753-7b45504cf6ef" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/FieldObserver.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/CounterHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/CounterHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBlueprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBlueprint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/DepositResourceState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/DepositResourceState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/GatherResourcesState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/GatherResourcesState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/SearchState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/SearchState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HiveMind/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HiveMind/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefubs/ObjTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefubs/ObjTile.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Markers/UniversalQualifierMarkers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Markers/UniversalQualifierMarkers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pheramone/Pheromone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pheramone/Pheromone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile/MetaTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile/MetaTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile/TileBlueprint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile/TileBlueprint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile/TileData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile/TileData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TilePainter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TilePainter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/HexGridUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/HexGridUtil.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,19 +22,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Drone/StateMachine/States/SearchState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Markers/UniversalQualifierMarkers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TilePainter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/HexGridUtil.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.artradz.observerutil@33e25410e8/Runtime/FieldObserver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/SpriteEditor/SpriteEditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridBrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintingState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/SceneViewOpenTilePaletteHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.6.0/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.6.0/Editor/BurstAotSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Utils/FieldObserver/Runtime/FieldObserver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad50157ee00e45cdb3c8bd67012f8804157200/f5/dc94568a/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b8222705424b4e7da3f40ce66289cbe09800/c9/2cdf2939/TileBase.cs" root0="SKIP_HIGHLIGHTING" />
@@ -164,7 +130,9 @@
       <workItem from="1748996148871" duration="647000" />
       <workItem from="1748998519752" duration="871000" />
       <workItem from="1749246090675" duration="2925000" />
-      <workItem from="1749421337500" duration="40000" />
+      <workItem from="1749421337500" duration="7458000" />
+      <workItem from="1749656964528" duration="398000" />
+      <workItem from="1749849977884" duration="970000" />
     </task>
     <servers />
   </component>
@@ -198,24 +166,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs</url>
-          <line>103</line>
-          <properties documentPath="C:\Repo\HiveMind\Assets\Scripts\Managers\MapManager.cs" initialLine="170" containingFunctionPresentation="Method 'SetTileDataNeighbors'">
-            <startOffsets>
-              <option value="4207" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4208" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

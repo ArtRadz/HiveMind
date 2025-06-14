@@ -1,5 +1,4 @@
 using UnityEngine;
-using static ObserverUtil.FieldObserver;
 
 public class Queen : MonoBehaviour
 {
@@ -24,7 +23,6 @@ public class Queen : MonoBehaviour
 
 	private void Start()
 	{
-		ObserveField(this, "currentResource", OnResourceChanged);
 
 		currentResource = initialResourceCount;
 
@@ -51,11 +49,7 @@ public class Queen : MonoBehaviour
 			gM.onTick.RemoveListener(OnTick);
 		}
 	}
-
-	private void Update()
-	{
-		Tick();
-	}
+	
 
 	public void InitQueenData(MetaTile parentTile)
 	{
@@ -64,7 +58,6 @@ public class Queen : MonoBehaviour
 
 	private void OnTick(float tickDuration)
 	{
-		Tick();
 		tickCounter++;
 
 		if (tickCounter >= productionIntervalTicks)
