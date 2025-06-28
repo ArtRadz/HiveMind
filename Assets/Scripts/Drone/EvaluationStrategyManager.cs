@@ -1,6 +1,9 @@
 using UnityEngine;
 using UQM = UniversalQualifierMarker;
 
+/// <summary>
+/// Provides evaluation strategies used by drones to decide on targets or follow pheromones.
+/// </summary>
 public static class EvaluationStrategyManager
 {
     public static bool DirectTargetCheck(TileData tileData, UQM uqmToCompare)

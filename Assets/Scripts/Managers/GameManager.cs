@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// Handles the simulation's tick loop and speed control. 
+    /// Note: UI and input handling in this script are temporary placeholders for manual testing.
+    /// </summary>
     public UnityEvent<float> onTick;
 
     [SerializeField] private float tickTimeStep = 1f;

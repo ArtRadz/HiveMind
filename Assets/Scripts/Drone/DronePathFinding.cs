@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UQM = UniversalQualifierMarker;
-
+/// <summary>
+/// Static utility class for drone movement decisions based on neighbors and pheromone evaluation.
+/// </summary>
 public static class DronePathFinding
 {
     public static MetaTile ChooseNextTile(TileData currentTileData, UQM currentTarget, int? currentCounter)

@@ -2,7 +2,10 @@ using UnityEngine;
 using UQM = UniversalQualifierMarker;
 using static DronePathFinding;
 using static CounterHandler;
-
+/// <summary>
+/// Drone state for searching resources or the queen. Updates counters, evaluates neighbors,
+/// and handles transitions to gather or deposit states.
+/// </summary>
 public class SearchState : DroneState
 {
     public SearchState(DroneBase drone) : base(drone)

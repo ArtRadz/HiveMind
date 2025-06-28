@@ -2,7 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UQM = UniversalQualifierMarker;
-
+/// <summary>
+/// Generates and manages the hex tile grid. Handles tile instantiation, neighbor linking,
+/// and positioning of visual tile objects. Subscribes to tick events for future expansion.
+/// </summary>
 public class MapManager : MonoBehaviour
 {
 	[Header("Grid Settings")]

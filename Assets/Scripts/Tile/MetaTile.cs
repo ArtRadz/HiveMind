@@ -1,6 +1,9 @@
 using UnityEngine;
 using UQM = UniversalQualifierMarker;
-
+/// <summary>
+/// Runtime representation of a tile. Holds tile data and handles pheromone updates, queen spawning,
+/// and communication with MapManager.
+/// </summary>
 public class MetaTile : MonoBehaviour
 {
     [SerializeField] public TileData tileData;

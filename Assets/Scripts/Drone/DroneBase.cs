@@ -1,7 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using UQM = UniversalQualifierMarker;
-
+/// <summary>
+/// Base logic for all drone behavior. Manages state transitions, movement, and pheromone marking.
+/// </summary>
 public class DroneBase : MonoBehaviour
 {
     private DroneState currentState;

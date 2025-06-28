@@ -1,6 +1,8 @@
 using UnityEngine;
 using UQM = UniversalQualifierMarker;
-
+/// <summary>
+/// Updates a (UQM, distance) counter used by drones to track proximity to targets.
+/// </summary>
 public static class CounterHandler
 {
     public static (UQM, int?) UpdateCounters(TileData currentTileData, (UQM uqmToCompare, int? distance) counter)

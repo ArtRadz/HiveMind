@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="664b81b6-220a-482b-9753-7b45504cf6ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HiveMind/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HiveMind/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefubs/ObjTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefubs/ObjTile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DroneBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MapManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile/MetaTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile/MetaTile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
