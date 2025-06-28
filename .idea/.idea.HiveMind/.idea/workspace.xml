@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="664b81b6-220a-482b-9753-7b45504cf6ef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HiveMind/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HiveMind/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefubs/ObjTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefubs/ObjTile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hive/Queen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/CounterHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/CounterHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/DronePathFinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Drone/EvaluationStrategyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Hive.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hive/Hive.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +136,9 @@
       <workItem from="1749421337500" duration="7458000" />
       <workItem from="1749656964528" duration="398000" />
       <workItem from="1749849977884" duration="970000" />
+      <workItem from="1749933257186" duration="4893000" />
+      <workItem from="1750642479041" duration="272000" />
+      <workItem from="1750709290878" duration="1525000" />
     </task>
     <servers />
   </component>

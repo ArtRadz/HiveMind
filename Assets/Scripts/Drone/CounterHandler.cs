@@ -11,7 +11,7 @@ public static class CounterHandler
             return counter;
         }
 
-        int? evaluatedValue = EvaluationStrategyManager.EvaluatePheromone(currentTileData, counter.uqmToCompare);
+        int? evaluatedValue = EvaluationStrategyManager.EvaluatePheromoneDistance(currentTileData, counter.uqmToCompare);
 
         if (evaluatedValue != null)
         {

@@ -26,7 +26,7 @@ public static class DronePathFinding
 
         foreach (var entry in validNeighbors)
         {
-            int? phValue = EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget);
+            int? phValue = EvaluationStrategyManager.EvaluatePheromoneDistance(entry.GetTileData(), currentTarget);
 
             if (phValue != null && (bestValue == null || phValue < bestValue))
             {
@@ -36,7 +36,7 @@ public static class DronePathFinding
         }
 
         pheromoneCandidates = pheromoneCandidates
-            .Where(entry => EvaluationStrategyManager.EvaluatePheromone(entry.GetTileData(), currentTarget) == bestValue)
+            .Where(entry => EvaluationStrategyManager.EvaluatePheromoneDistance(entry.GetTileData(), currentTarget) == bestValue)
             .ToList();
 
         if (pheromoneCandidates.Count > 0)
@@ -44,11 +44,49 @@ public static class DronePathFinding
             return ChooseRandomNeighbor(pheromoneCandidates);
         }
 
-        return ChooseRandomNeighbor(validNeighbors);
+        return ChooseRandomWeightedNeighbor(validNeighbors,currentTarget);
     }
 
     private static MetaTile ChooseRandomNeighbor(List<MetaTile> neighbors)
     {
         return neighbors[Random.Range(0, neighbors.Count)];
+    }
+    private static MetaTile ChooseRandomWeightedNeighbor(List<MetaTile> neighbors,UQM currentTarget)
+    {
+        float totalWeight = 0f;
+        foreach (MetaTile neighbor in neighbors)
+        {
+            float phStrength;
+            TileData tileData = neighbor.GetTileData();
+            if (tileData.tileSpecialType == UQM.Queen)
+            {
+                phStrength = 999;
+            }
+            else
+            {
+                phStrength = EvaluationStrategyManager.EvaluatePheromoneStrength(tileData, currentTarget);
+            }
+            totalWeight += 1 / (1 + phStrength);
+        }
+        float r= Random.value * totalWeight;
+        foreach (MetaTile neighbor in neighbors)
+        {
+            float phStrength;
+            TileData tileData = neighbor.GetTileData();
+            if (tileData.tileSpecialType == UQM.Queen)
+            {
+                phStrength = 999;
+            }
+            else
+            {
+                phStrength = EvaluationStrategyManager.EvaluatePheromoneStrength(tileData, currentTarget);
+            }
+            r -= 1 / (1 + phStrength);
+            if (r <= 0)
+            {
+                return neighbor;
+            }
+        }
+        return ChooseRandomNeighbor(neighbors);
     }
 }
